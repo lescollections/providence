@@ -12568,4 +12568,11 @@
       </bundlePlacements>
     </searchForm>
   </searchForms>
+  <logins>
+   <login user_name="admin" password="oGXCKMfZwZWy9gadpRo" fname="CollectiveAccess" lname="Administrateur"
+     email="contact@ideesculture.com">
+     <role code="admin"/>
+     <group code="admin"/>
+   </login>
+ </logins>
 </profile>
