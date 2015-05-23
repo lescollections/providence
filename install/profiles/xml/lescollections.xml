@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="">
   <profileName>lescollections</profileName>
-  <profileDescription>Profil créé le 20 Avril 2015 à 23:06:10 par Gautier Michelin</profileDescription>
+  <profileDescription>Profil créé le 20 Avril 2015 à 23:06:10 par Gautier Michelin, mis à jour le 19 Mai 2015 par Caroline Solievna</profileDescription>
   <locales>
     <locale lang="en" country="US" dontUseForCataloguing="1">English</locale>
     <locale lang="fr" country="FR">Français</locale>
@@ -737,8 +737,8 @@
         <item idno="appelation" enabled="1" default="0">
           <labels>
             <label locale="en_US" preferred="1">
-              <name_singular>Appelation</name_singular>
-              <name_plural>Appelation</name_plural>
+              <name_singular>Appellation</name_singular>
+              <name_plural>Appellation</name_plural>
             </label>
           </labels>
         </item>
@@ -2892,7 +2892,7 @@
         </label>
       </labels>
       <items>
-        <item idno="default" enabled="1" default="0">
+        <item idno="geol" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Géologie / Minéraux</name_singular>
@@ -2900,7 +2900,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="botanique" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Botanique / Flore</name_singular>
@@ -2908,7 +2908,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="zoologie" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Zoologie / Faune</name_singular>
@@ -2916,7 +2916,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="paleo" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Paléontologie</name_singular>
@@ -2924,7 +2924,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="jardin" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Parc &amp; Jardin</name_singular>
@@ -2934,7 +2934,7 @@
         </item>
       </items>
     </list>
-    <list code="dom_art" hierarchical="0" system="0" vocabulary="1">
+    <list code="dom_art" hierarchical="0" system="0" vocabulary="1" defaultSort="1">
       <labels>
         <label locale="fr_FR">
           <name>Domaine Art</name>
@@ -2949,7 +2949,7 @@
             </label>
           </labels>
         </item>
-        <item idno="peinture" enabled="1" default="0">
+        <item idno="peinture" enabled="1" default="1">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Peinture</name_singular>
@@ -2982,7 +2982,7 @@
         </label>
       </labels>
       <items>
-        <item idno="default" enabled="1" default="0">
+        <item idno="edifice" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Édifice</name_singular>
@@ -2990,7 +2990,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="edicule" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Édicule</name_singular>
@@ -2998,7 +2998,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="site" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Site</name_singular>
@@ -3006,7 +3006,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="element_archi" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Élément d’architecture</name_singular>
@@ -3023,7 +3023,7 @@
         </label>
       </labels>
       <items>
-        <item idno="default" enabled="1" default="0">
+        <item idno="objart" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Objet d’Art</name_singular>
@@ -3031,7 +3031,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="meuble" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Meuble</name_singular>
@@ -3039,7 +3039,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="artdeco" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Arts décoratifs</name_singular>
@@ -3064,7 +3064,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="verrerie" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Verrerie</name_singular>
@@ -3072,7 +3072,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="ivoirerie" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Ivoirerie</name_singular>
@@ -3080,7 +3080,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="obj_archeo" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Objet archéologique</name_singular>
@@ -3162,7 +3162,7 @@
         </label>
       </labels>
       <items>
-        <item idno="default" enabled="1" default="0">
+        <item idno="numismatique" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Numismatique / Monnaies</name_singular>
@@ -3170,7 +3170,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="phaleristique" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Phaléristique / Médailles</name_singular>
@@ -3178,7 +3178,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="philatelie" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Philatélie / Timbres</name_singular>
@@ -3186,7 +3186,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="transport" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Transport</name_singular>
@@ -3194,7 +3194,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="vinophilie" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Vinophilie / Vins</name_singular>
@@ -3202,7 +3202,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="ludo" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Ludophilie / Jeux, jouets</name_singular>
@@ -3210,7 +3210,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="militaria" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Militaria</name_singular>
@@ -3227,7 +3227,7 @@
         </label>
       </labels>
       <items>
-        <item idno="default" enabled="1" default="0">
+        <item idno="livre" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Livre</name_singular>
@@ -3235,7 +3235,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="bd" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>BD</name_singular>
@@ -3243,7 +3243,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="revue" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Revue</name_singular>
@@ -3251,7 +3251,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="archive" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Archive</name_singular>
@@ -3259,7 +3259,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="autographe" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Autographe</name_singular>
@@ -3276,7 +3276,7 @@
         </label>
       </labels>
       <items>
-        <item idno="default" enabled="1" default="0">
+        <item idno="afrique" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Ethnologie africaine</name_singular>
@@ -3284,7 +3284,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="amerique" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Ethnologie américaine</name_singular>
@@ -3292,7 +3292,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="oceanie" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Ethnologie océanienne</name_singular>
@@ -3300,7 +3300,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="asie" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Ethnologie asiatique</name_singular>
@@ -3308,7 +3308,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="euro_region" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Ethnologie européenne et régionale</name_singular>
@@ -3325,7 +3325,7 @@
         </label>
       </labels>
       <items>
-        <item idno="default" enabled="1" default="0">
+        <item idno="montre" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Montre</name_singular>
@@ -3333,7 +3333,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="bijou" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Bijou</name_singular>
@@ -3341,7 +3341,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="parure" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Parure</name_singular>
@@ -3349,7 +3349,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="stylo" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Stylo</name_singular>
@@ -3366,7 +3366,7 @@
         </label>
       </labels>
       <items>
-        <item idno="default" enabled="1" default="0">
+        <item idno="objsci" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Objet scientifique</name_singular>
@@ -3374,7 +3374,7 @@
             </label>
           </labels>
         </item>
-        <item idno="default" enabled="1" default="0">
+        <item idno="objtech" enabled="1" default="0">
           <labels>
             <label locale="fr_FR" preferred="1">
               <name_singular>Objet technique</name_singular>
@@ -4347,7 +4347,7 @@
             <setting name="fieldWidth">40</setting>
             <setting name="doesNotTakeLocale">1</setting>
             <setting name="canBeUsedInSort">1</setting>
-            <setting name="useDatePicker">0</setting>
+            <setting name="useDatePicker">1</setting>
             <setting name="mustNotBeBlank">0</setting>
             <setting name="isLifespan">0</setting>
             <setting name="suggestExistingValues">0</setting>
@@ -6034,18 +6034,24 @@
     <metadataElement code="dom_nat" datatype="List" list="dom_nat">
       <labels>
         <label locale="fr_FR">
-          <name>Domaine</name>
+          <name>Domaine (nature)</name>
         </label>
       </labels>
+      <settings>
+        <setting name="nullOptionText">Non spécifié</setting>
+        <setting name="render">radio_buttons</setting>
+        <setting name="requireValue">1</setting>
+        <setting name="maxColumns">0</setting>
+      </settings>
       <typeRestrictions>
         <restriction>
           <table>ca_objects</table>
           <type>nature</type>
           <includeSubtypes>1</includeSubtypes>
           <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">0</setting>
-            <setting name="minimumAttributeBundlesToDisplay">0</setting>
+            <setting name="minAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
       </typeRestrictions>
@@ -6053,11 +6059,13 @@
     <metadataElement code="dom_archi" datatype="List" list="dom_archi">
       <labels>
         <label locale="fr_FR">
-          <name>Domaine</name>
+          <name>Domaine (architecture)</name>
         </label>
       </labels>
       <settings>
         <setting name="render">radio_buttons</setting>
+        <setting name="nullOptionText">Non spécifié</setting>
+        <setting name="requireValue">1</setting>
       </settings>
       <typeRestrictions>
         <restriction>
@@ -6065,9 +6073,9 @@
           <type>archi</type>
           <includeSubtypes>1</includeSubtypes>
           <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">0</setting>
-            <setting name="minimumAttributeBundlesToDisplay">0</setting>
+            <setting name="minAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
       </typeRestrictions>
@@ -6075,18 +6083,23 @@
     <metadataElement code="dom_mob" datatype="List" list="dom_mob">
       <labels>
         <label locale="fr_FR">
-          <name>Domaine</name>
+          <name>Domaine (mobilier)</name>
         </label>
       </labels>
+      <settings>
+        <setting name="nullOptionText">Non spécifié</setting>
+        <setting name="render">radio_buttons</setting>
+        <setting name="requireValue">1</setting>
+      </settings>
       <typeRestrictions>
         <restriction>
           <table>ca_objects</table>
           <type>mobilier</type>
           <includeSubtypes>1</includeSubtypes>
           <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">0</setting>
-            <setting name="minimumAttributeBundlesToDisplay">0</setting>
+            <setting name="minAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
       </typeRestrictions>
@@ -6094,18 +6107,24 @@
     <metadataElement code="dom_art" datatype="List" list="dom_art">
       <labels>
         <label locale="fr_FR">
-          <name>Domaine</name>
+          <name>Domaine (art)</name>
         </label>
       </labels>
+      <settings>
+        <setting name="nullOptionText">Non spécifié</setting>
+        <setting name="render">radio_buttons</setting>
+        <setting name="requireValue">1</setting>
+        <setting name="maxColumns">0</setting>
+      </settings>
       <typeRestrictions>
         <restriction>
           <table>ca_objects</table>
           <type>art</type>
           <includeSubtypes>1</includeSubtypes>
           <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">0</setting>
-            <setting name="minimumAttributeBundlesToDisplay">0</setting>
+            <setting name="minAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
       </typeRestrictions>
@@ -6113,18 +6132,23 @@
     <metadataElement code="dom_img" datatype="List" list="dom_img">
       <labels>
         <label locale="fr_FR">
-          <name>Domaine</name>
+          <name>Domaine (image et son)</name>
         </label>
       </labels>
+      <settings>
+        <setting name="nullOptionText">Non spécifié</setting>
+        <setting name="render">radio_buttons</setting>
+        <setting name="requireValue">1</setting>
+      </settings>
       <typeRestrictions>
         <restriction>
           <table>ca_objects</table>
           <type>imgson</type>
           <includeSubtypes>1</includeSubtypes>
           <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">0</setting>
-            <setting name="minimumAttributeBundlesToDisplay">0</setting>
+            <setting name="minAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
       </typeRestrictions>
@@ -6132,11 +6156,14 @@
     <metadataElement code="dom_antiq" datatype="List" list="dom_antiq">
       <labels>
         <label locale="fr_FR">
-          <name>Domaine</name>
+          <name>Domaine (antique)</name>
         </label>
       </labels>
       <settings>
         <setting name="render">radio_buttons</setting>
+        <setting name="nullOptionText">Non spécifié</setting>
+        <setting name="requireValue">1</setting>
+        <setting name="maxColumns">0</setting>
       </settings>
       <typeRestrictions>
         <restriction>
@@ -6144,9 +6171,9 @@
           <type>antique</type>
           <includeSubtypes>1</includeSubtypes>
           <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">0</setting>
-            <setting name="minimumAttributeBundlesToDisplay">0</setting>
+            <setting name="minAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
       </typeRestrictions>
@@ -6154,11 +6181,14 @@
     <metadataElement code="dom_col" datatype="List" list="dom_col">
       <labels>
         <label locale="fr_FR">
-          <name>Domaine</name>
+          <name>Domaine (collections)</name>
         </label>
       </labels>
       <settings>
         <setting name="render">radio_buttons</setting>
+        <setting name="nullOptionText">Non spécifié</setting>
+        <setting name="requireValue">1</setting>
+        <setting name="maxColumns">0</setting>
       </settings>
       <typeRestrictions>
         <restriction>
@@ -6166,9 +6196,9 @@
           <type>collection</type>
           <includeSubtypes>1</includeSubtypes>
           <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">0</setting>
-            <setting name="minimumAttributeBundlesToDisplay">0</setting>
+            <setting name="minAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
       </typeRestrictions>
@@ -6176,11 +6206,12 @@
     <metadataElement code="dom_impr" datatype="List" list="dom_impr">
       <labels>
         <label locale="fr_FR">
-          <name>Domaine</name>
+          <name>Domaine (manuscrits et imprimés)</name>
         </label>
       </labels>
       <settings>
         <setting name="render">radio_buttons</setting>
+        <setting name="nullOptionText">Non spécifié</setting>
       </settings>
       <typeRestrictions>
         <restriction>
@@ -6188,9 +6219,9 @@
           <type>manuimpri</type>
           <includeSubtypes>1</includeSubtypes>
           <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">0</setting>
-            <setting name="minimumAttributeBundlesToDisplay">0</setting>
+            <setting name="minAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
       </typeRestrictions>
@@ -6198,11 +6229,12 @@
     <metadataElement code="dom_jo" datatype="List" list="dom_jo">
       <labels>
         <label locale="fr_FR">
-          <name>Domaine</name>
+          <name>Domaine (joaillerie et orfèvrerie)</name>
         </label>
       </labels>
       <settings>
         <setting name="render">radio_buttons</setting>
+        <setting name="nullOptionText">Non spécifié</setting>
       </settings>
       <typeRestrictions>
         <restriction>
@@ -6210,9 +6242,9 @@
           <type>bijou</type>
           <includeSubtypes>1</includeSubtypes>
           <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">0</setting>
-            <setting name="minimumAttributeBundlesToDisplay">0</setting>
+            <setting name="minAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
       </typeRestrictions>
@@ -6220,11 +6252,12 @@
     <metadataElement code="dom_trib" datatype="List" list="dom_trib">
       <labels>
         <label locale="fr_FR">
-          <name>Domaine</name>
+          <name>Domaine (tribal et ethno)</name>
         </label>
       </labels>
       <settings>
         <setting name="render">radio_buttons</setting>
+        <setting name="nullOptionText">Non spécifié</setting>
       </settings>
       <typeRestrictions>
         <restriction>
@@ -6232,9 +6265,9 @@
           <type>tribalethno</type>
           <includeSubtypes>1</includeSubtypes>
           <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">0</setting>
-            <setting name="minimumAttributeBundlesToDisplay">0</setting>
+            <setting name="minAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
       </typeRestrictions>
@@ -6242,11 +6275,14 @@
     <metadataElement code="dom_sci" datatype="List" list="dom_sci">
       <labels>
         <label locale="fr_FR">
-          <name>Domaine</name>
+          <name>Domaine (sciences et techniques)</name>
         </label>
       </labels>
       <settings>
         <setting name="render">radio_buttons</setting>
+        <setting name="nullOptionText">Non spécifié</setting>
+        <setting name="requireValue">1</setting>
+        <setting name="maxColumns">0</setting>
       </settings>
       <typeRestrictions>
         <restriction>
@@ -6254,9 +6290,9 @@
           <type>scitech</type>
           <includeSubtypes>1</includeSubtypes>
           <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">0</setting>
-            <setting name="minimumAttributeBundlesToDisplay">0</setting>
+            <setting name="minAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
       </typeRestrictions>
@@ -6420,6 +6456,7 @@
       <settings>
         <setting name="canBeUsedInSearchForm">0</setting>
         <setting name="canBeUsedInDisplay">0</setting>
+        <setting name="lineBreakAfterNumberOfElements">1</setting>
       </settings>
       <elements>
         <metadataElement code="inscription_type" datatype="Text">
@@ -6431,7 +6468,6 @@
           <settings>
             <setting name="minChars">0</setting>
             <setting name="maxChars">65535</setting>
-            <setting name="regex"/>
             <setting name="fieldWidth">40</setting>
             <setting name="fieldHeight">1</setting>
             <setting name="usewysiwygeditor">0</setting>
@@ -6439,7 +6475,6 @@
             <setting name="canBeUsedInSort">1</setting>
             <setting name="suggestExistingValues">0</setting>
             <setting name="suggestExistingValueSort">value</setting>
-            <setting name="default_text"/>
             <setting name="canBeUsedInSearchForm">1</setting>
             <setting name="canBeUsedInDisplay">1</setting>
             <setting name="canMakePDF">0</setting>
@@ -6455,7 +6490,6 @@
           <settings>
             <setting name="minChars">0</setting>
             <setting name="maxChars">65535</setting>
-            <setting name="regex"/>
             <setting name="fieldWidth">40</setting>
             <setting name="fieldHeight">1</setting>
             <setting name="usewysiwygeditor">0</setting>
@@ -6470,7 +6504,6 @@
           <settings>
             <setting name="minChars">0</setting>
             <setting name="maxChars">65535</setting>
-            <setting name="regex"/>
             <setting name="fieldWidth">40</setting>
             <setting name="fieldHeight">1</setting>
             <setting name="usewysiwygeditor">0</setting>
@@ -6487,6 +6520,92 @@
             <setting name="minAttributesPerRow">0</setting>
             <setting name="maxAttributesPerRow">0</setting>
             <setting name="minimumAttributeBundlesToDisplay">0</setting>
+          </settings>
+        </restriction>
+      </typeRestrictions>
+    </metadataElement>
+    <metadataElement code="mat_et_techniques" datatype="Container">
+      <labels>
+        <label locale="fr_FR">
+          <name>Matériaux et techniques</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="canBeUsedInSearchForm">0</setting>
+        <setting name="canBeUsedInDisplay">0</setting>
+      </settings>
+      <elements>
+        <metadataElement code="materiau" datatype="Text">
+          <labels>
+            <label locale="fr_FR">
+              <name>Matériau</name>
+            </label>
+          </labels>
+          <settings>
+            <setting name="minChars">0</setting>
+            <setting name="maxChars">65535</setting>
+            <setting name="fieldWidth">40</setting>
+            <setting name="fieldHeight">1</setting>
+            <setting name="usewysiwygeditor">0</setting>
+            <setting name="doesNotTakeLocale">0</setting>
+            <setting name="canBeUsedInSort">1</setting>
+            <setting name="suggestExistingValues">1</setting>
+            <setting name="suggestExistingValueSort">value</setting>
+            <setting name="canBeUsedInSearchForm">1</setting>
+            <setting name="canBeUsedInDisplay">1</setting>
+            <setting name="canMakePDF">0</setting>
+            <setting name="canMakePDFForValue">0</setting>
+            <setting name="isDependentValue">0</setting>
+          </settings>
+        </metadataElement>
+        <metadataElement code="tech" datatype="Text">
+          <labels>
+            <label locale="fr_FR">
+              <name>Technique</name>
+            </label>
+          </labels>
+          <settings>
+            <setting name="minChars">0</setting>
+            <setting name="maxChars">65535</setting>
+            <setting name="fieldWidth">40</setting>
+            <setting name="fieldHeight">1</setting>
+            <setting name="usewysiwygeditor">0</setting>
+            <setting name="doesNotTakeLocale">0</setting>
+            <setting name="canBeUsedInSort">1</setting>
+            <setting name="suggestExistingValues">0</setting>
+            <setting name="suggestExistingValueSort">value</setting>
+            <setting name="canBeUsedInSearchForm">1</setting>
+            <setting name="canBeUsedInDisplay">1</setting>
+            <setting name="canMakePDF">0</setting>
+            <setting name="canMakePDFForValue">0</setting>
+            <setting name="isDependentValue">0</setting>
+          </settings>
+        </metadataElement>
+      </elements>
+      <typeRestrictions>
+        <restriction>
+          <table>ca_objects</table>
+          <settings>
+            <setting name="minAttributesPerRow">0</setting>
+            <setting name="maxAttributesPerRow">0</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
+          </settings>
+        </restriction>
+      </typeRestrictions>
+    </metadataElement>
+    <metadataElement code="localisation_txt" datatype="Text">
+      <labels>
+        <label locale="fr_FR">
+          <name>Localisation</name>
+        </label>
+      </labels>
+      <typeRestrictions>
+        <restriction>
+          <table>ca_objects</table>
+          <settings>
+            <setting name="minAttributesPerRow">0</setting>
+            <setting name="maxAttributesPerRow">10</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
       </typeRestrictions>
@@ -6537,6 +6656,8 @@
                 <setting name="add_label" locale="fr_FR">Ajouter une courte description</setting>
                 <setting name="add_label" locale="sv_SE">Lägg till kort beskrivning</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -6544,12 +6665,16 @@
               <bundle>idno</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_entities">
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -6564,6 +6689,8 @@
               <bundle>ca_attribute_loan_authorization_date</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -6572,6 +6699,8 @@
               <bundle>ca_attribute_loan_in_date</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -6580,6 +6709,8 @@
               <bundle>ca_attribute_loan_out_date</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -6588,6 +6719,8 @@
               <bundle>ca_attribute_loan_return_date</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -6596,6 +6729,8 @@
               <bundle>ca_attribute_loan_renewal_date</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -6604,6 +6739,8 @@
               <bundle>ca_attribute_loan_conditions</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -6612,6 +6749,8 @@
               <bundle>ca_attribute_loan_note</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -6620,6 +6759,8 @@
               <bundle>ca_attribute_loan_purpose</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -6646,6 +6787,8 @@
               <bundle>ca_objects</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -6660,6 +6803,8 @@
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -6674,6 +6819,8 @@
               <bundle>ca_movements</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -6730,6 +6877,8 @@
                 <setting name="add_label" locale="en_CA">Add short description</setting>
                 <setting name="add_label" locale="fr_FR">Ajouter une courte description</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -6737,12 +6886,16 @@
               <bundle>idno</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_entities">
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -6757,6 +6910,8 @@
               <bundle>ca_attribute_planned_removal_date</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -6765,6 +6920,8 @@
               <bundle>ca_attribute_removal_date</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -6773,6 +6930,8 @@
               <bundle>ca_attribute_movement_method</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -6781,6 +6940,8 @@
               <bundle>ca_attribute_movement_reason</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -6789,6 +6950,8 @@
               <bundle>ca_attribute_movement_note</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -6815,6 +6978,8 @@
               <bundle>ca_objects</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -6830,6 +6995,8 @@
               <bundle>ca_object_lots</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -6844,6 +7011,8 @@
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -6894,6 +7063,8 @@
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -6901,30 +7072,40 @@
               <bundle>list_code</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="default_sort">
               <bundle>default_sort</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="is_hierarchical">
               <bundle>is_hierarchical</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="is_system_list">
               <bundle>is_system_list</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="use_as_vocabulary">
               <bundle>use_as_vocabulary</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -6967,6 +7148,7 @@
               <bundle>hierarchy_location</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse">bubbles</setting>
                 <setting name="open_hierarchy">1</setting>
                 <setting name="auto_shrink"/>
               </settings>
@@ -6975,6 +7157,8 @@
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -6982,66 +7166,88 @@
               <bundle>idno</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="item_value">
               <bundle>item_value</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="is_enabled">
               <bundle>is_enabled</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="is_default">
               <bundle>is_default</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="rank">
               <bundle>rank</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="color">
               <bundle>color</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="icon">
               <bundle>icon</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="validation_format">
               <bundle>validation_format</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_settings">
               <bundle>settings</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="access">
               <bundle>access</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="status">
               <bundle>status</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -7066,6 +7272,8 @@
               <bundle>nonpreferred_labels</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -7091,6 +7299,8 @@
               <bundle>ca_list_items</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -7151,6 +7361,8 @@
                 <setting name="add_label" locale="fr_FR">Ajouter un nom de relation</setting>
                 <setting name="add_label" locale="sv_SE">Lägg till relationsnamn</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -7158,36 +7370,47 @@
               <bundle>type_code</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="is_default">
               <bundle>is_default</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="sub_type_left_id">
               <bundle>sub_type_left_id</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="sub_type_right_id">
               <bundle>sub_type_right_id</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="rank">
               <bundle>rank</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="hierarchy_location">
               <bundle>hierarchy_location</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse">bubbles</setting>
                 <setting name="open_hierarchy">1</setting>
                 <setting name="auto_shrink"/>
               </settings>
@@ -7240,6 +7463,8 @@
                 <setting name="add_label" locale="fr_FR">Ajouter un titre</setting>
                 <setting name="add_label" locale="sv_SE">Lägg till titel</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -7247,12 +7472,16 @@
               <bundle>set_code</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_set_description">
               <bundle>ca_attribute_set_description</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -7261,24 +7490,32 @@
               <bundle>access</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="status">
               <bundle>status</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_users">
               <bundle>ca_users</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_user_groups">
               <bundle>ca_user_groups</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -7303,6 +7540,8 @@
               <bundle>ca_set_items</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -7353,6 +7592,8 @@
                 <setting name="add_label" locale="fr_FR">Ajouter une légende</setting>
                 <setting name="add_label" locale="sv_SE">Lägg till bildtext</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -7360,6 +7601,8 @@
               <bundle>ca_attribute_set_item_is_primary</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -7368,6 +7611,8 @@
               <bundle>ca_attribute_set_item_description</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -7420,6 +7665,8 @@
                 <setting name="add_label" locale="fr_FR">Ajouter un nom de formulaire</setting>
                 <setting name="add_label" locale="sv_SE">Lägg till formulärnamn</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -7427,42 +7674,56 @@
               <bundle>form_code</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="table_num">
               <bundle>table_num</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="is_system">
               <bundle>is_system</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_search_form_placements">
               <bundle>ca_search_form_placements</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_settings">
               <bundle>settings</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_users">
               <bundle>ca_users</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_user_groups">
               <bundle>ca_user_groups</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -7513,6 +7774,8 @@
                 <setting name="add_label" locale="fr_FR">Ajouter un nom de liste</setting>
                 <setting name="add_label" locale="sv_SE">Lägg till display listnamn</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -7520,42 +7783,56 @@
               <bundle>display_code</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="table_num">
               <bundle>table_num</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="is_system">
               <bundle>is_system</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="settings">
               <bundle>settings</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_bundle_display_type_restric">
               <bundle>ca_bundle_display_type_restrictions</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_users">
               <bundle>ca_users</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_user_groups">
               <bundle>ca_user_groups</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -7580,6 +7857,8 @@
               <bundle>ca_bundle_display_placements</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -7630,6 +7909,8 @@
                 <setting name="add_label" locale="fr_FR">Add title</setting>
                 <setting name="add_label" locale="sv_SE">Lägg till titel</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -7637,12 +7918,16 @@
               <bundle>tour_code</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_tour_description">
               <bundle>ca_attribute_tour_description</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -7651,24 +7936,32 @@
               <bundle>icon</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="color">
               <bundle>color</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="access">
               <bundle>access</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="status">
               <bundle>status</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -7693,18 +7986,24 @@
               <bundle>ca_objects</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_object_lots">
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_entities">
               <bundle>ca_places</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -7755,6 +8054,8 @@
                 <setting name="add_label" locale="fr_FR">Add title</setting>
                 <setting name="add_label" locale="sv_SE">Lägg till titel</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -7762,12 +8063,16 @@
               <bundle>idno</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_tour_stop_descrip">
               <bundle>ca_attribute_tour_stop_description</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -7776,6 +8081,8 @@
               <bundle>ca_attribute_tour_stop_georeference</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -7784,24 +8091,32 @@
               <bundle>icon</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="color">
               <bundle>color</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="access">
               <bundle>access</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="status">
               <bundle>status</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -7826,6 +8141,8 @@
               <bundle>ca_objects</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -7840,6 +8157,8 @@
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -7854,6 +8173,8 @@
               <bundle>ca_places</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -7870,6 +8191,8 @@
               <bundle>ca_occurrences</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -7884,6 +8207,8 @@
               <bundle>ca_collections</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -7898,6 +8223,8 @@
               <bundle>ca_tour_stops</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -7930,6 +8257,8 @@
               <bundle>ca_list_items</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -7967,12 +8296,16 @@
               <bundle>idno</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_dom_antiq3">
               <bundle>ca_attribute_dom_antiq</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -7981,6 +8314,8 @@
               <bundle>ca_attribute_dom_archi</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -7989,6 +8324,8 @@
               <bundle>ca_attribute_dom_trib</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -7997,6 +8334,8 @@
               <bundle>ca_attribute_dom_sci</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8005,6 +8344,8 @@
               <bundle>ca_attribute_dom_nat</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8013,6 +8354,8 @@
               <bundle>ca_attribute_dom_mob</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8021,6 +8364,8 @@
               <bundle>ca_attribute_dom_impr</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8029,6 +8374,8 @@
               <bundle>ca_attribute_dom_art</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8037,6 +8384,8 @@
               <bundle>ca_attribute_dom_jo</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8045,6 +8394,8 @@
               <bundle>ca_attribute_dom_img</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8053,6 +8404,8 @@
               <bundle>ca_attribute_dom_col</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8061,6 +8414,8 @@
               <bundle>ca_attribute_refs</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8070,6 +8425,8 @@
               <settings>
                 <setting name="label" locale="fr_FR">Nom pour l'affichage</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -8079,6 +8436,8 @@
                 <setting name="label" locale="fr_FR">Dénominations</setting>
                 <setting name="add_label" locale="fr_FR">ajouter une dénomination</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -8087,6 +8446,8 @@
               <settings>
                 <setting name="label" locale="fr_FR">Contrôle d'accès</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -8105,6 +8466,8 @@
               <bundle>ca_object_representations</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -8131,6 +8494,8 @@
               <bundle>ca_attribute_biblio</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8139,27 +8504,28 @@
               <bundle>ca_attribute_external_link</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
             </placement>
-            <placement code="ca_objects_location3">
-              <bundle>ca_objects_location</bundle>
+            <placement code="ca_attribute_localisation_txt3">
+              <bundle>ca_attribute_localisation_txt</bundle>
               <settings>
-                <setting name="label" locale="fr_FR">Localisation</setting>
                 <setting name="readonly"/>
-                <setting name="locationTrackingMode">ca_movements</setting>
-                <setting name="ca_movements_dateElement">planned_removal_date</setting>
-                <setting name="currentLocationColor">#EEEEEE</setting>
-                <setting name="futureLocationColor">#EEEEEE</setting>
-                <setting name="pastLocationColor">#EEEEEE</setting>
-                <setting name="useHierarchicalBrowser">1</setting>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
+                <setting name="sort">1</setting>
+                <setting name="sortDirection">ASC</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_custodial_notes2">
               <bundle>ca_attribute_custodial_notes</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8168,6 +8534,8 @@
               <bundle>ca_attribute_acquisition</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8176,6 +8544,8 @@
               <bundle>ca_attribute_assurance</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8184,6 +8554,8 @@
               <bundle>ca_attribute_blocnote</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8192,7 +8564,10 @@
               <bundle>access</bundle>
               <settings>
                 <setting name="label" locale="fr_FR">Contrôle d'accès</setting>
+                <setting name="label" locale="en_US">Contrôle d'accès</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -8208,6 +8583,9 @@
               <bundle>ca_attribute_description</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
+                <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
             </placement>
@@ -8215,6 +8593,9 @@
               <bundle>ca_attribute_work_dimensions</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
+                <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
             </placement>
@@ -8222,6 +8603,9 @@
               <bundle>ca_attribute_mat_et_techniques</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
+                <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
             </placement>
@@ -8229,6 +8613,8 @@
               <bundle>ca_attribute_inscriptions</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8246,8 +8632,11 @@
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
+                <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
                 <setting name="dontShowDeleteButton">0</setting>
                 <setting name="display_template">^ca_entities.preferred_labels</setting>
@@ -8259,6 +8648,8 @@
               <bundle>ca_objects</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -8273,6 +8664,9 @@
               <bundle>ca_attribute_date</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
+                <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
             </placement>
@@ -8280,6 +8674,9 @@
               <bundle>ca_attribute_lieu</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
+                <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
             </placement>
@@ -8287,6 +8684,9 @@
               <bundle>ca_attribute_georeference</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
+                <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
             </placement>
@@ -8320,6 +8720,8 @@
                 <setting name="label" locale="en_US">Name</setting>
                 <setting name="add_label" locale="en_US">Add name</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -8327,18 +8729,24 @@
               <bundle>idno</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="status">
               <bundle>status</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="access">
               <bundle>access</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="nonpreferred_labels">
@@ -8347,6 +8755,8 @@
                 <setting name="label" locale="en_US">Alternate name</setting>
                 <setting name="add_label" locale="en_US">Add alternate name</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -8354,6 +8764,8 @@
               <bundle>ca_attribute_lifespan</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8362,6 +8774,8 @@
               <bundle>ca_attribute_nationality</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8370,6 +8784,8 @@
               <bundle>ca_attribute_biography</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8378,6 +8794,8 @@
               <bundle>ca_attribute_alumni_notes</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -8396,6 +8814,8 @@
               <bundle>ca_attribute_address</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8404,6 +8824,8 @@
               <bundle>ca_attribute_telephone</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8412,6 +8834,8 @@
               <bundle>ca_attribute_email</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8420,6 +8844,8 @@
               <bundle>ca_attribute_url</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8440,6 +8866,8 @@
               <bundle>ca_objects</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -8454,6 +8882,8 @@
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -8468,6 +8898,8 @@
               <bundle>ca_places</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -8484,6 +8916,8 @@
               <bundle>ca_occurrences</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -8498,6 +8932,8 @@
               <bundle>ca_collections</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -8537,6 +8973,8 @@
               <settings>
                 <setting name="label" locale="en_US">Title</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -8544,24 +8982,32 @@
               <bundle>idno</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="access">
               <bundle>access</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="status">
               <bundle>status</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="source_id">
               <bundle>source_id</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="nonpreferred_labels">
@@ -8569,6 +9015,8 @@
               <settings>
                 <setting name="label" locale="en_US">Alternate titles</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -8576,12 +9024,16 @@
               <bundle>ca_attribute_date</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_description">
               <bundle>ca_attribute_description</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8590,6 +9042,8 @@
               <bundle>ca_attribute_citation</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8598,6 +9052,8 @@
               <bundle>ca_attribute_publication_info</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8606,6 +9062,8 @@
               <bundle>ca_attribute_alternate_pub_numbers</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8614,6 +9072,8 @@
               <bundle>ca_attribute_rights</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8622,6 +9082,8 @@
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -8636,6 +9098,8 @@
               <bundle>ca_occurrences</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -8650,6 +9114,8 @@
               <bundle>ca_attribute_internal_notes</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8659,6 +9125,8 @@
               <settings>
                 <setting name="add_label" locale="en_US">Add external link</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8679,6 +9147,8 @@
               <bundle>ca_objects</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -8693,6 +9163,8 @@
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -8707,6 +9179,8 @@
               <bundle>ca_occurrences</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -8721,6 +9195,8 @@
               <bundle>ca_collections</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -8747,6 +9223,8 @@
               <bundle>ca_places</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -8763,6 +9241,8 @@
               <bundle>ca_attribute_georeference</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8771,6 +9251,8 @@
               <bundle>ca_attribute_geonames</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8791,6 +9273,8 @@
               <bundle>ca_list_items</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -8809,6 +9293,8 @@
                 <setting name="label" locale="en_US">Library of Congress Subject Headings</setting>
                 <setting name="add_label" locale="en_US">Add new subject heading</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8841,6 +9327,7 @@
               <bundle>hierarchy_navigation</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse">bubbles</setting>
                 <setting name="open_hierarchy">1</setting>
                 <setting name="auto_shrink"/>
               </settings>
@@ -8851,6 +9338,8 @@
                 <setting name="label" locale="en_US">Name</setting>
                 <setting name="add_label" locale="en_US">Add name</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -8858,24 +9347,32 @@
               <bundle>idno</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="access">
               <bundle>access</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="status">
               <bundle>status</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_description">
               <bundle>ca_attribute_description</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8896,6 +9393,7 @@
               <bundle>hierarchy_navigation</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse">bubbles</setting>
                 <setting name="open_hierarchy">1</setting>
                 <setting name="auto_shrink"/>
               </settings>
@@ -8904,6 +9402,8 @@
               <bundle>ca_objects</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -8918,6 +9418,8 @@
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -8932,6 +9434,8 @@
               <bundle>ca_attribute_georeference</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8940,6 +9444,8 @@
               <bundle>ca_attribute_geonames</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -8960,6 +9466,7 @@
               <bundle>hierarchy_location</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse">bubbles</setting>
                 <setting name="open_hierarchy">1</setting>
                 <setting name="auto_shrink"/>
               </settings>
@@ -8980,6 +9487,7 @@
               <bundle>hierarchy_navigation</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse">bubbles</setting>
                 <setting name="open_hierarchy">1</setting>
                 <setting name="auto_shrink"/>
               </settings>
@@ -8990,6 +9498,8 @@
                 <setting name="label" locale="en_US">Alternate names</setting>
                 <setting name="add_label" locale="en_US">Add alternate name</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -9022,6 +9532,8 @@
               <settings>
                 <setting name="label" locale="en_US">Title</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -9029,18 +9541,24 @@
               <bundle>idno</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="access">
               <bundle>access</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="status">
               <bundle>status</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="nonpreferred_labels">
@@ -9048,6 +9566,8 @@
               <settings>
                 <setting name="label" locale="en_US">Alternate titles</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -9055,12 +9575,16 @@
               <bundle>ca_attribute_date</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_description">
               <bundle>ca_attribute_description</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -9081,6 +9605,8 @@
               <bundle>ca_objects</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9095,6 +9621,8 @@
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9109,6 +9637,8 @@
               <bundle>ca_places</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9125,6 +9655,8 @@
               <bundle>ca_occurrences</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9139,6 +9671,8 @@
               <bundle>ca_collections</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9165,6 +9699,8 @@
               <bundle>ca_list_items</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9183,6 +9719,8 @@
                 <setting name="label" locale="en_US">Library of Congress Subject Headings</setting>
                 <setting name="add_label" locale="en_US">Add new subject heading</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -9203,6 +9741,8 @@
               <bundle>ca_attribute_external_link</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -9237,6 +9777,8 @@
                 <setting name="label" locale="en_US">Name</setting>
                 <setting name="add_label" locale="en_US">Add name</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -9244,12 +9786,16 @@
               <bundle>idno_stub</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="lot_status_id">
               <bundle>lot_status_id</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="nonpreferred_labels">
@@ -9258,6 +9804,8 @@
                 <setting name="label" locale="en_US">Alternate names</setting>
                 <setting name="add_label" locale="en_US">Add alternate name</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -9265,24 +9813,32 @@
               <bundle>extent</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="extent_units">
               <bundle>extent_units</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="status">
               <bundle>status</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_lot_notes">
               <bundle>ca_attribute_lot_notes</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -9303,6 +9859,8 @@
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9329,6 +9887,8 @@
               <bundle>ca_objects</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9367,6 +9927,7 @@
               <bundle>hierarchy_navigation</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse">bubbles</setting>
                 <setting name="open_hierarchy">1</setting>
                 <setting name="auto_shrink"/>
               </settings>
@@ -9377,6 +9938,8 @@
                 <setting name="label" locale="en_US">Name</setting>
                 <setting name="add_label" locale="en_US">Add name</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -9384,18 +9947,24 @@
               <bundle>idno</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="status">
               <bundle>status</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_description">
               <bundle>ca_attribute_description</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -9404,6 +9973,8 @@
               <bundle>ca_attribute_internal_notes</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -9424,6 +9995,7 @@
               <bundle>hierarchy_location</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse">bubbles</setting>
                 <setting name="open_hierarchy">1</setting>
                 <setting name="auto_shrink"/>
               </settings>
@@ -9432,6 +10004,8 @@
               <bundle>ca_attribute_georeference</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -9452,6 +10026,7 @@
               <bundle>hierarchy_navigation</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse">bubbles</setting>
                 <setting name="open_hierarchy">1</setting>
                 <setting name="auto_shrink"/>
               </settings>
@@ -9460,6 +10035,8 @@
               <bundle>ca_objects</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9487,6 +10064,7 @@
               <bundle>hierarchy_navigation</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse">bubbles</setting>
                 <setting name="open_hierarchy">1</setting>
                 <setting name="auto_shrink"/>
               </settings>
@@ -9497,6 +10075,8 @@
                 <setting name="label" locale="en_US">Alternate names</setting>
                 <setting name="add_label" locale="en_US">Add alternate name</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -9530,6 +10110,8 @@
                 <setting name="label" locale="en_US">Title</setting>
                 <setting name="add_label" locale="en_US">Add title</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -9539,6 +10121,8 @@
                 <setting name="label" locale="en_US">Alternate names</setting>
                 <setting name="add_label" locale="en_US">Add alternate name</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -9546,24 +10130,32 @@
               <bundle>media</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="access">
               <bundle>access</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="status">
               <bundle>status</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_credit_line">
               <bundle>ca_attribute_credit_line</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -9572,6 +10164,8 @@
               <bundle>ca_attribute_caption</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
@@ -9580,12 +10174,16 @@
               <bundle>ca_attribute_media_rights</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_media_license">
               <bundle>ca_attribute_media_license</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -9604,6 +10202,8 @@
               <bundle>ca_representation_annotations</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9630,6 +10230,8 @@
               <bundle>ca_objects</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9644,6 +10246,8 @@
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9658,6 +10262,8 @@
               <bundle>ca_places</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9674,6 +10280,8 @@
               <bundle>ca_occurrences</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9714,6 +10322,8 @@
                 <setting name="label" locale="en_US">Title</setting>
                 <setting name="add_label" locale="en_US">Add title</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -9721,24 +10331,32 @@
               <bundle>ca_representation_annotation_properties</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="access">
               <bundle>access</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="status">
               <bundle>status</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_description">
               <bundle>ca_attribute_description</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -9757,6 +10375,8 @@
               <bundle>ca_list_items</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9785,6 +10405,8 @@
               <bundle>ca_objects</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9799,6 +10421,8 @@
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9813,6 +10437,8 @@
               <bundle>ca_places</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9829,6 +10455,8 @@
               <bundle>ca_occurrences</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sort">1</setting>
@@ -9857,6 +10485,8 @@
                 <setting name="label" locale="en_US">Alternate titles</setting>
                 <setting name="add_label" locale="en_US">Add alternate title</setting>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -9882,6 +10512,8 @@
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -9889,48 +10521,64 @@
               <bundle>editor_code</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="color">
               <bundle>color</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="editor_type">
               <bundle>editor_type</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_editor_ui_type_restrictions">
               <bundle>ca_editor_ui_type_restrictions</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_editor_ui_screens">
               <bundle>ca_editor_ui_screens</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="is_system_ui">
               <bundle>is_system_ui</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_users">
               <bundle>ca_users</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_user_groups">
               <bundle>ca_user_groups</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -9955,6 +10603,8 @@
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -9962,30 +10612,40 @@
               <bundle>idno</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="color">
               <bundle>color</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="is_default">
               <bundle>is_default</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_editor_ui_screen_type_restr">
               <bundle>ca_editor_ui_screen_type_restrictions</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
             <placement code="ca_editor_ui_bundle_placements">
               <bundle>ca_editor_ui_bundle_placements</bundle>
               <settings>
                 <setting name="readonly"/>
+                <setting name="expand_collapse_value">bubbles</setting>
+                <setting name="expand_collapse_no_value">bubbles</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -12568,11 +13228,11 @@
       </bundlePlacements>
     </searchForm>
   </searchForms>
-  <logins>
+	<logins>
    <login user_name="admin" password="oGXCKMfZwZWy9gadpRo" fname="CollectiveAccess" lname="Administrateur"
      email="contact@ideesculture.com">
      <role code="admin"/>
      <group code="admin"/>
    </login>
- </logins>
+	</logins>
 </profile>
