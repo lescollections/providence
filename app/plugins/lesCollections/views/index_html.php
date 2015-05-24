@@ -24,7 +24,7 @@ $vs_sample_var 	= $this->getVar('sample_var');
 			</tr>		
 			<tr>
 				<td>Email</td>
-				<td>maryanne_prunet@yahoo.com</td>
+				<td>email@example.com</td>
 			</tr>
 			<tr>
 				<td>Nom, prénom</td>
@@ -32,10 +32,7 @@ $vs_sample_var 	= $this->getVar('sample_var');
 			</tr>
 			<tr>
 				<td>Coordonnées postales</td>
-				<td>Mary Anne Prunet<br/>
-Av Winston Churchill 214 boite 5<br/>
-1180 Bruxelles<br/>
-Belgique</td>
+				<td>...</td>
 			</tr>
 		</tbody>
 	</table>
