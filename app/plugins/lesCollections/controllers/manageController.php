@@ -45,12 +45,12 @@
 
  		public function __construct(&$po_request, &$po_response, $pa_view_paths=null) {
  			parent::__construct($po_request, $po_response, $pa_view_paths);
- 			
- 			if (!$this->request->user->canDoAction('can_use_anchorcms_plugin')) {
- 				$this->response->setRedirect($this->request->config->get('error_display_url').'/n/3000?r='.urlencode($this->request->getFullUrlPath()));
+ 			/*
+ 			if (!$this->request->user->canDoAction('can_use_lescollectionsfr_plugin')) {
+ 				$this->response->setRedirect($this->request->config->get('error_display_url').'/n/3500?r='.urlencode($this->request->getFullUrlPath()));
  				return;
  			}
- 			
+ 			*/
  			$this->opo_config = Configuration::load(__CA_APP_DIR__.'/plugins/lesCollections/conf/lesCollections.conf');
  		}
  		 		
@@ -59,13 +59,13 @@
  		# -------------------------------------------------------
  		public function Index($type="") {
 			$this->view->setVar('sample_var', "sample_var");
-			$this->render('index_html.php');			 				
+			$this->render('manage_index_html.php');
  		}
 
  		# ------------------------------------------------------- 				
  		public function Paiement($type="") {
 			$this->view->setVar('sample_var', "sample_var");
-			$this->render('paiement_html.php');			 				
+			$this->render('manage_paiement_html.php');
  		}
 
  		# ------------------------------------------------------- 				

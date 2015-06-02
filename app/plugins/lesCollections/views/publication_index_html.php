@@ -1,93 +1,50 @@
 <?php
-$vs_sample_var 	= $this->getVar('sample_var');
+$pb_saved 	= (bool)$this->getVar('saved');
+$va_infos = $this->getVar("infos");
 ?>
 
 <h2>lesCollections.fr</h2>
-<p>Depuis cet écran, vous pouvez gérer vos préférences d'abonnement sur lescollections.fr.</p>
+<p>Depuis cet écran, vous pouvez gérer vos préférences concernant la publication de vos collections.</p>
+<?php if($pb_saved) : ?>
+<div class="notification-info-box rounded">
+    <ul class="notification-info-box">
+        <li class="notification-info-box">Modifications enregistrées</li>
+    </ul>
+</div>
+<?php endif; ?>
 <div class="sectionBox">
-	<h3>Vos coordonnées</h3>
+	<h3>Page d'accueil</h3>
 	<div class="clear"></div>
 	<p>Merci de vérifier vos coordonnées et de nous signaler toute modification.</p>
+    <form target="_top" action="<?php print caNavUrl($this->request, "*", "*", "*"); ?>" method="post" id="collectionPublicationInfoForm">
 	<table id="caSearchConfigSettingList" class="listtable" width="100%" border="0" cellpadding="0" cellspacing="1">
 		<thead>
 			<tr>
 				<th class="list-header-unsorted">
-					Information				</th>
-				<th class="list-header-unsorted">
-					Valeur				</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Numéro d'abonnement</td>
-				<td>#ID</td>
-			</tr>		
-			<tr>
-				<td>Email</td>
-				<td>email@example.com</td>
-			</tr>
-			<tr>
-				<td>Nom, prénom</td>
-				<td>Prunet, Mary Anne</td>
-			</tr>
-			<tr>
-				<td>Coordonnées postales</td>
-				<td>...</td>
-			</tr>
-		</tbody>
-	</table>
-	<div class="control-box rounded">
-		<div class="control-box-left-content">
-			<?php print caNavButton($this->request, __CA_NAV_BUTTON_EDIT__, "Modifier mes informations", '', $this->request->getModulePath(), $this->request->getController(), 'Paiement', array()); ?>
-		</div>
-		<div class="control-box-right-content">
-		</div>
-		<div class="control-box-middle-content">				
-		</div>
-	</div>	
-</div>
-<div class="clear"></div>
-<div class="sectionBox">
-	<h3>Votre abonnement</h3>
-	<div class="clear"></div>
-	<p>Retrouvez ici vos informations de paiement.</p>
-	<table id="caSearchConfigSettingList" class="listtable" width="100%" border="0" cellpadding="0" cellspacing="1">
-		<thead>
-			<tr>
-				<th class="list-header-unsorted">
-					Information
-				</th>
+					Paramètre
+                </th>
 				<th class="list-header-unsorted">
 					Valeur
-				</th>
+                </th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td>Type d'abonnement</td>
-				<td>Paiement mensuel CB</td>
+				<td>Titre de votre collection</td>
+				<td><input type="text" name="collectionname" style="width:90%;" placeholder="Mes collections sur lescollections.fr" width=""
+                           value="<?php print ($va_infos->collectionname ? : ""); ?>"/></td>
 			</tr>
 			<tr>
-				<td>Numéro de compte paiement</td>
-				<td>#ID</td>
+                <td>Sous-titre</td>
+                <td><input type="text" name="collectionsubname" style="width:90%;" placeholder="Pseudo"
+                           value="<?php print ($va_infos->collectionsubname ? : ""); ?>"/></td>
 			</tr>
-			<tr>
-				<td>Date de dernier paiement</td>
-				<td>__/__/____</td>
-			</tr>
-			<tr>
-				<td>Abonnement valide jusqu'au</td>
-				<td>__/__/____</td>
-			</tr>
+            <tr>
+                <td>Introduction text</td>
+                <td><textarea name="collectionintro" style="width:90%;height:110px;" placeholder="Veni, Vidi, Léonard de Vinci"/><?php print ($va_infos->collectionintro ? : ""); ?></textarea></td>
+            </tr>
 		</tbody>
 	</table>
-	<div class="control-box rounded">
-		<div class="control-box-left-content">
-			<?php print caNavButton($this->request, __CA_NAV_BUTTON_SETTINGS__, "Réaliser un paiement", '', $this->request->getModulePath(), $this->request->getController(), 'Paiement', array()); ?>
-		</div>
-		<div class="control-box-right-content">
-		</div>
-		<div class="control-box-middle-content">				
-		</div>
-	</div>
+        <input type="submit" name="Mettre à jour" />
+    </form>
 </div>

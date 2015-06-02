@@ -34,7 +34,7 @@
  	require_once(__CA_MODELS_DIR__.'/ca_locales.php');
  	
 
- 	class manageController extends ActionController {
+ 	class publicationController extends ActionController {
  		# -------------------------------------------------------
  		protected $opa_locales;
  		protected $pa_parameters;
@@ -46,28 +46,56 @@
  		public function __construct(&$po_request, &$po_response, $pa_view_paths=null) {
  			parent::__construct($po_request, $po_response, $pa_view_paths);
  			
- 			if (!$this->request->user->canDoAction('can_use_anchorcms_plugin')) {
- 				$this->response->setRedirect($this->request->config->get('error_display_url').'/n/3000?r='.urlencode($this->request->getFullUrlPath()));
+ 			/*if (!$this->request->user->canDoAction('can_use_lescollectionsfr_plugin')) {
+ 				$this->response->setRedirect($this->request->config->get('error_display_url').'/n/3500?r='.urlencode($this->request->getFullUrlPath()));
  				return;
  			}
- 			
+ 			*/
  			$this->opo_config = Configuration::load(__CA_APP_DIR__.'/plugins/lesCollections/conf/lesCollections.conf');
  		}
- 		 		
+
+        # -------------------------------------------------------
+        # Save params to json file
+        # -------------------------------------------------------
+        private function _updateJson($params) {
+            $vs_json_infos = json_encode(
+                array(
+                    "collectionname" => $params["collectionname"],
+                    "collectionsubname" => $params["collectionsubname"],
+                    "collectionintro" => $params["collectionintro"]
+                )
+            );
+            if (!file_put_contents($this->opo_config->get(pawtucketLesCollectionsJsonFile), $vs_json_infos)) {
+                return false;
+            }
+            return true;
+        }
  		# -------------------------------------------------------
  		# Functions to render views
  		# -------------------------------------------------------
  		public function Index($type="") {
-			$this->view->setVar('sample_var', "sample_var");
-			$this->render('index_html.php');			 				
- 		}
+            // Test if we are inside an update
+            if($this->request->getParameter("collectionname",pString) != "") {
+                $va_params = array(
+                    "collectionname" => $this->request->getParameter("collectionname",pString),
+                    "collectionsubname" => $this->request->getParameter("collectionsubname",pString),
+                    "collectionintro" => $this->request->getParameter("collectionintro",pString)
+                );
+                if (!$this->_updateJson($va_params)) {
+                    $this->response->setRedirect($this->request->config->get('error_display_url').'/n/3500?r='.urlencode($this->request->getFullUrlPath()));
+                };
+                $this->view->setVar('saved', true);
+            } else {
+                $this->view->setVar('saved', false);
+            }
 
- 		# ------------------------------------------------------- 				
- 		public function Paiement($type="") {
-			$this->view->setVar('sample_var', "sample_var");
-			$this->render('paiement_html.php');			 				
+            if (!$vs_json_infos = file_get_contents($this->opo_config->get(pawtucketLesCollectionsJsonFile))) {
+                $this->response->setRedirect($this->request->config->get('error_display_url').'/n/3500?r='.urlencode($this->request->getFullUrlPath()));
+                return;
+            }
+            $this->view->setVar('infos', json_decode($vs_json_infos));
+			$this->render('publication_index_html.php');
  		}
-
- 		# ------------------------------------------------------- 				
+ 		# -------------------------------------------------------
  	}
  ?>

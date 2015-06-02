@@ -41,7 +41,7 @@
 		}
 		# -------------------------------------------------------
 		/**
-		 * Override checkStatus() to return true - the anchorCmsPlugin always initializes ok... (part to complete)
+		 * Override checkStatus() to return true - the can_use_lescollectionsfr_plugin always initializes ok... (part to complete)
 		 */
 		public function checkStatus() {
 			return array(
@@ -56,20 +56,42 @@
 		 * Insert activity menu
 		 */
 		public function hookRenderMenuBar($pa_menu_bar) {
-			//var_dump($pa_menu_bar["manage"]["navigation"]);
-			//die();
 			if ($o_req = $this->getRequest()) {
-				//if (!$o_req->user->canDoAction('can_use_media_import_plugin')) { return true; }
+				if (!$o_req->user->canDoAction('can_use_lescollectionsfr_plugin')) { return $pa_menu_bar; }
 				
 				$pa_menu_bar["manage"]["navigation"]["lescollections"] = array(
 					'displayName' => "lesCollections.fr",
 					"default" => array(
-						'module' => 'lescollections', 
-						'controller' => 'manage', 
+						'module' => 'lescollections',
+						'controller' => 'manage',
 						'action' => 'Index'
-					)
-				);					
-			} 
+					),
+                    "submenu" => array(
+                        "navigation" => array(
+                            "compte" => array(
+                                'displayName' => "mon compte",
+                                "default" => array(
+                                    'module' => 'lescollections',
+                                    'controller' => 'manage',
+                                    'action' => 'Index'
+                                ),
+                                "is_enabled" => 1
+                            ),
+                            "publication" => array(
+                                'displayName' => "publication",
+                                "default" => array(
+                                    'module' => 'lescollections',
+                                    'controller' => 'publication',
+                                    'action' => 'Index'
+                                ),
+                                "is_enabled" => 1
+                            )
+                        )
+                    )
+				);
+
+			}
+
 			return $pa_menu_bar;
 		}
 		# -------------------------------------------------------
@@ -78,7 +100,7 @@
 		 */
 		static function getRoleActionList() {
 			return array(
-				'can_use_anchorcms_plugin' => array(
+				'can_use_lescollectionsfr_plugin' => array(
 						'label' => _t('Can use lesCollections plugin'),
 						'description' => _t('User can use lesCollections.fr plugin to manage his account.')
 					)
