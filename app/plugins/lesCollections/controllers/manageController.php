@@ -68,6 +68,11 @@
 			$this->render('manage_paiement_html.php');
  		}
 
- 		# ------------------------------------------------------- 				
+ 		# -------------------------------------------------------
+ 		//
+ 		public function Test() {
+            var_dump($this->opo_config);
+            die();
+        }
  	}
  ?>
