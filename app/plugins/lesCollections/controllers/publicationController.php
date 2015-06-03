@@ -87,11 +87,18 @@
                 $this->view->setVar('saved', true);
             } else {
                 $this->view->setVar('saved', false);
-            }
+           }
 
             if (!$vs_json_infos = file_get_contents($this->opo_config->get(pawtucketLesCollectionsJsonFile))) {
-                $this->response->setRedirect($this->request->config->get('error_display_url').'/n/3500?r='.urlencode($this->request->getFullUrlPath()));
-                return;
+                if (!file_put_contents($this->opo_config->get(pawtucketLesCollectionsJsonFile),"\n")) {
+                    var_dump($this->opo_config->get(pawtucketLesCollectionsJsonFile));
+                    die;
+                 //   $this->response->setRedirect($this->request->config->get('error_display_url').'/n/3500?r='.urlencode($this->request->getFullUrlPath()));
+                 //   return;
+                }
+
+               // $this->response->setRedirect($this->request->config->get('error_display_url').'/n/3500?r='.urlencode($this->request->getFullUrlPath()));
+                //return;
             }
             $this->view->setVar('infos', json_decode($vs_json_infos));
 			$this->render('publication_index_html.php');
