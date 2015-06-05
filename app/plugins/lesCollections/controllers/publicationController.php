@@ -52,6 +52,7 @@
  			}
  			*/
  			$this->opo_config = Configuration::load(__CA_APP_DIR__.'/plugins/lesCollections/conf/lesCollections.conf');
+
  		}
 
         # -------------------------------------------------------
@@ -65,7 +66,8 @@
                     "collectionintro" => $params["collectionintro"]
                 )
             );
-            if (!file_put_contents($this->opo_config->get(pawtucketLesCollectionsJsonFile), $vs_json_infos)) {
+            $jsonFile = __CA_BASE_DIR__.$this->opo_config->get(pawtucketLesCollectionsJsonFile);
+            if (!file_put_contents( $jsonFile, $vs_json_infos)) {
                 return false;
             }
             return true;
@@ -89,9 +91,10 @@
                 $this->view->setVar('saved', false);
            }
 
-            if (!$vs_json_infos = file_get_contents($this->opo_config->get(pawtucketLesCollectionsJsonFile))) {
-                if (!file_put_contents($this->opo_config->get(pawtucketLesCollectionsJsonFile),"\n")) {
-                    var_dump($this->opo_config->get(pawtucketLesCollectionsJsonFile));
+            $jsonFile = __CA_BASE_DIR__.$this->opo_config->get(pawtucketLesCollectionsJsonFile);
+            if (!$vs_json_infos = file_get_contents($jsonFile)) {
+                if (!file_put_contents($jsonFile ,"\n")) {
+                    var_dump($jsonFile);
                     die;
                  //   $this->response->setRedirect($this->request->config->get('error_display_url').'/n/3500?r='.urlencode($this->request->getFullUrlPath()));
                  //   return;
