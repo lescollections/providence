@@ -330,9 +330,9 @@
 		}
 		if (!caIsValidFilePath($ps_pdfminer_path)) { return false; }
 
-		if (!file_exists($ps_pdfminer_path."/pdf2txt.py")) { return $_MEDIAHELPER_PLUGIN_CACHE_MEDIAINFO[$ps_pdfminer_path] = false; }
+		if (!file_exists($ps_pdfminer_path)) { return $_MEDIAHELPER_PLUGIN_CACHE_MEDIAINFO[$ps_pdfminer_path] = false; }
 		if (caGetOSFamily() == OS_WIN32) { return true; }		// don't try exec test on Windows
-		exec($ps_pdfminer_path."/pdf2txt.py > /dev/null",$va_output,$vn_return);
+		exec($ps_pdfminer_path." > /dev/null",$va_output,$vn_return);
 		if($vn_return == 100) {
 			return $_MEDIAHELPER_PLUGIN_CACHE_MEDIAINFO[$ps_pdfminer_path] = true;
 		}
@@ -428,14 +428,17 @@
 		if(!$ps_mediainfo_path) { $ps_mediainfo_path = caGetExternalApplicationPath('mediainfo'); }
 		if (!caIsValidFilePath($ps_mediainfo_path)) { return false; }
 		
+		//
+		// TODO: why don't we parse this from the XML output like civilized people?
+		//
 		exec($ps_mediainfo_path." ".caEscapeShellArg($ps_filepath), $va_output, $vn_return);
 		$vs_cat = "GENERIC";
 		$va_return = array();
 		foreach($va_output as $vs_line){
 			$va_split = explode(":",$vs_line);
-			$vs_left = trim($va_split[0]);
-			$vs_right = trim($va_split[1]);
-			if(strlen($vs_right)==0){ // category line
+			$vs_left = trim(array_shift($va_split));
+			$vs_right = trim(join(":", $va_split));
+			if(strlen($vs_right) == 0){ // category line
 				$vs_cat = strtoupper($vs_left);
 				continue;
 			}
@@ -504,7 +507,7 @@
 	/**
 	 * Perform mapping of extracted media metadata to CollectiveAccess bundles.
 	 *
-	 * @param BaseModel $po_instance Model instance to insert extracted metadata into
+	 * @param BundlableLabelableBaseModelWithAttributes $po_instance Model instance to insert extracted metadata into
 	 * @param array $pa_metadata Extracted metadata
 	 * @param int $pn_locale_id The current locale as a numeric locale_id
 	 * @return bool True extracted metadata was mapped and the model changed, false if no change was made to the model
@@ -634,8 +637,11 @@
 
 		foreach($va_mapping as $vs_metadata => $va_attr) {
 			$va_tmp = explode(":", $vs_metadata);
+			$vs_delimiter = caGetOption('delimiter', $va_attr, false);
 
 			foreach($va_attr as $vs_attr) {
+				if($vs_attr == 'delimiter') { continue; }
+
 				$va_metadata =& $pa_metadata;
 				foreach($va_tmp as $vs_el) {
 					if (isset($va_metadata[$vs_el])) {
@@ -666,10 +672,21 @@
 						} else {
 							// try as attribute
 							if(sizeof($va_tmp2)==2){ // format ca_objects.foo, we only want "foo"
-								$po_instance->replaceAttribute(array(
-									$va_tmp2[1] => $va_metadata,
-									'locale_id' => $pn_locale_id
-								),$va_tmp2[1]);
+								if($vs_delimiter) {
+									$va_m = explode($vs_delimiter, $va_metadata);
+									$po_instance->removeAttributes($va_tmp2[1]);
+									foreach($va_m as $vs_m) {
+										$po_instance->addAttribute(array(
+											$va_tmp2[1] => trim($vs_m),
+											'locale_id' => $pn_locale_id
+										),$va_tmp2[1]);
+									}
+								} else {
+									$po_instance->replaceAttribute(array(
+										$va_tmp2[1] => $va_metadata,
+										'locale_id' => $pn_locale_id
+									),$va_tmp2[1]);
+								}
 							}
 						}
 				}

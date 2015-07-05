@@ -50,17 +50,9 @@ class WLPlugSearchEngineSqlSearch extends BaseSearchPlugin implements IWLPlugSea
 	# -------------------------------------------------------
 	private $opn_indexing_subject_tablenum=null;
 	private $opn_indexing_subject_row_id=null;
-
-	private $opa_doc_content_buffer;
-	
-	private $ops_insert_sql; 	// sql INSERT statement (for indexing)
 	
 	private $ops_delete_sql;	// sql DELETE statement (for unindexing)
 	private $opqr_delete;		// prepared statement for delete (subject_tablenum and subject_row_id only specified)
-	private $ops_delete_with_field_specification_sql;		// sql DELETE statement (for unindexing)
-	private $opqr_delete_with_field_specification;			// prepared statement for delete with field_tablenum and field_num specified
-	
-	private $opqr_update_index_in_place;
 	
 	private $opo_stemmer;		// snoball stemmer
 	private $opb_do_stemming = true;
@@ -76,6 +68,24 @@ class WLPlugSearchEngineSqlSearch extends BaseSearchPlugin implements IWLPlugSea
 	// TODO: Obviously these are specific to English. We need to add stop words for other languages.
 	//
 	static $s_stop_words = array("a", "an", "the", "of", "to");
+
+	private $ops_insert_word_index_sql = '';
+	private $opqr_lookup_word = null;
+	private $ops_insert_word_sql = '';
+	private $ops_insert_ngram_sql = '';
+
+
+	private $ops_delete_with_field_num_sql = "";
+	private $opqr_delete_with_field_num = null;
+
+	private $ops_delete_with_field_row_id_sql = '';
+	private $opqr_delete_with_field_row_id = null;
+
+	private $ops_delete_with_field_row_id_and_num = "";
+	private $opqr_delete_with_field_row_id_and_num = null;
+
+	private $ops_delete_dependent_sql = "";
+	private $opqr_delete_dependent_sql = null;
 	
 	# -------------------------------------------------------
 	public function __construct($po_db=null) {
@@ -507,6 +517,8 @@ class WLPlugSearchEngineSqlSearch extends BaseSearchPlugin implements IWLPlugSea
 				break;
 		}
 		
+		$o_base = new SearchBase();
+		
 		$va_old_signs = $po_rewritten_query->getSigns();
 		foreach($va_elements as $o_lucene_query_element) {
 			$vb_is_blank_search = false;
@@ -526,6 +538,7 @@ class WLPlugSearchEngineSqlSearch extends BaseSearchPlugin implements IWLPlugSea
 			$va_direct_query_temp_tables = array();	// List of temporary tables created by direct search queries; tables listed here are dropped at the end of processing for the query element		
 			$pa_direct_sql_query_params = null; // set to array with values to use with direct SQL query placeholders or null to pass single standard table_num value as param (most queries just need this single value)
 			$vs_direct_sql_query = null;
+			$vn_direct_sql_target_table_num = $pn_subject_tablenum;
 			
 			switch($vs_class = get_class($o_lucene_query_element)) {
 				case 'Zend_Search_Lucene_Search_Query_Boolean':
@@ -599,6 +612,13 @@ class WLPlugSearchEngineSqlSearch extends BaseSearchPlugin implements IWLPlugSea
 							$va_lower_term = $o_lucene_query_element->getLowerTerm();
 							$va_upper_term = $o_lucene_query_element->getUpperTerm();
 							$va_element = $this->_getElementIDForAccessPoint($pn_subject_tablenum, $va_lower_term->field);
+							
+							$vn_direct_sql_target_table_num = $va_element['table_num'];
+							
+							$va_indexed_fields = $o_base->getFieldsToIndex($pn_subject_tablenum, $vn_direct_sql_target_table_num);
+							$vn_root_element_id = $va_element['element_info']['hier_element_id'];
+							if (!isset($va_indexed_fields['_ca_attribute_'.$va_element['element_id']]) && (!$vn_root_element_id || ($vn_root_element_id && !isset($va_indexed_fields['_ca_attribute_'.$vn_root_element_id])))) { break(2); } // skip if not indexed
+											
 							
 							switch($va_element['datatype']) {
 								case __CA_ATTRIBUTE_VALUE_GEOCODE__:
@@ -729,9 +749,8 @@ class WLPlugSearchEngineSqlSearch extends BaseSearchPlugin implements IWLPlugSea
 								if (!$vs_access_point && ($vs_field = $o_term->field)) { $vs_access_point = $vs_field; }
 								
 								$va_terms = preg_split("![{$vs_search_tokenizer_regex}]+!u", (string)$o_term->text);
-						
+								$va_raw_terms[] = (string)$o_term->text;
 								foreach($va_terms as $vs_term) {
-									$va_raw_terms[] = $vs_term;
 									if (strlen($vs_escaped_text = $this->opo_db->escape($vs_term))) {
 										$va_words[] = $vs_escaped_text;
 									}
@@ -820,8 +839,14 @@ class WLPlugSearchEngineSqlSearch extends BaseSearchPlugin implements IWLPlugSea
 								$vs_term = $o_term->text;
 					
 								if ($vs_access_point && (mb_strtoupper($vs_term) == _t('[BLANK]'))) {
-									$vb_is_blank_search = true; 
-									break;
+									$t_ap = $this->opo_datamodel->getInstanceByTableNum($va_access_point_info['table_num'], true);
+									if (is_a($t_ap, 'BaseLabel')) {	// labels have the literal text "[Blank]" indexed to "blank" to indicate blank-ness 
+										$vb_is_blank_search = false;
+										$vs_term = _t('blank');
+									} else {
+										$vb_is_blank_search = true;
+										break;
+									} 
 								}
 								
 								$va_terms = array($vs_term); //$this->_tokenize($vs_term, true, $vn_i);
@@ -935,10 +960,16 @@ class WLPlugSearchEngineSqlSearch extends BaseSearchPlugin implements IWLPlugSea
 									$vn_fld_num = $this->getFieldNum($vs_table, $vs_field);
 									$vs_fld_num = 'I'.$vn_fld_num;
 								
+									$vn_direct_sql_target_table_num = $vs_table_num; 
+									
 									if (!strlen($vn_fld_num)) {
 										$t_element = new ca_metadata_elements();
 										if ($t_element->load(array('element_code' => ($vs_sub_field ? $vs_sub_field : $vs_field)))) {
+											$va_indexed_fields = $o_base->getFieldsToIndex($pn_subject_tablenum, $vn_direct_sql_target_table_num);
 											$vn_fld_num = $t_element->getPrimaryKey();
+											$vn_root_element_id = $t_element->get('hier_element_id');
+											
+											if (!isset($va_indexed_fields['_ca_attribute_'.$vn_fld_num]) && (!$vn_root_element_id || ($vn_root_element_id && !isset($va_indexed_fields['_ca_attribute_'.$vn_root_element_id])))) { break(2); } // skip if not indexed
 											$vs_fld_num = 'A'.$vn_fld_num;
 										
 											if (!$vb_is_blank_search) {
@@ -1287,16 +1318,41 @@ class WLPlugSearchEngineSqlSearch extends BaseSearchPlugin implements IWLPlugSea
 						$vs_sql_where .= " AND (".join(" OR ", $va_field_restrict_sql).")";
 					}
 					
-					if ($vn_i == 0) {
-						if ($vs_direct_sql_query) {
-							$vs_direct_sql_query = str_replace('^JOIN', "", $vs_direct_sql_query);
+					$va_join = array();
+					if ($vn_direct_sql_target_table_num != $pn_subject_tablenum) {
+						// We're doing direct queries on metadata in a related table, fun!
+						// Now let's rewrite the direct query to work...
+						
+						if ($t_target = $this->opo_datamodel->getInstanceByTableNum($vn_direct_sql_target_table_num, true)) {
+							// First we create the join from the related table to our subject
+							$vs_target_table_name = $t_target->tableName();
+							
+							$va_path = array_keys($this->opo_datamodel->getPath($vn_direct_sql_target_table_num, $pn_subject_tablenum));
+							
+							$vs_left_table = array_shift($va_path);
+							
+							$vn_cj = 0;
+							foreach($va_path as $vs_right_table) {
+								if (sizeof($va_rels = $this->opo_datamodel->getRelationships($vs_left_table, $vs_right_table)) > 0) {
+									$va_join[] = "INNER JOIN {$vs_right_table} ON {$vs_right_table}.".$va_rels[$vs_left_table][$vs_right_table][0][1]." = ".(($vn_cj == 0) ? 'ca.row_id' : "{$vs_left_table}.".$va_rels[$vs_left_table][$vs_right_table][0][0]);
+								}
+								$vs_left_table = $vs_right_table;
+								$vn_cj++;
+							}
+						
+							// Next we rewrite the key we're pulling to be from our subject
+							$vs_direct_sql_query = str_replace("SELECT ca.row_id", "SELECT ".$this->opo_datamodel->primaryKey($pn_subject_tablenum, true), $vs_direct_sql_query);
+						
+							// Finally we pray
 						}
-
+					}
+					if ($vn_i == 0) {
 						if($vs_direct_sql_query) {
+							$vs_direct_sql_query = str_replace('^JOIN', join("\n", $va_join), $vs_direct_sql_query);
 							$vs_sql = "INSERT IGNORE INTO {$ps_dest_table} {$vs_direct_sql_query}";
-
+							
 							if((strpos($vs_sql, '?') !== false) && (!is_array($pa_direct_sql_query_params) || sizeof($pa_direct_sql_query_params) == 0)) {
-								$pa_direct_sql_query_params = array((int)$pn_subject_tablenum);
+								$pa_direct_sql_query_params = array(($vn_direct_sql_target_table_num != $pn_subject_tablenum) ? $vn_direct_sql_target_table_num : (int)$pn_subject_tablenum);
 							}
 						} else {
 							$vs_sql = "
@@ -1319,7 +1375,8 @@ class WLPlugSearchEngineSqlSearch extends BaseSearchPlugin implements IWLPlugSea
 						if ((($vn_num_terms = (sizeof($va_ft_terms) + sizeof($va_ft_like_terms) + sizeof($va_ft_stem_terms))) > 1) && (!$vs_direct_sql_query)){
 							$vs_sql .= " HAVING count(distinct sw.word_id) = {$vn_num_terms}";
 						}
-						$t=new Timer();
+						
+						$t = new Timer();
 						$this->opo_db->query($vs_sql, is_array($pa_direct_sql_query_params) ? $pa_direct_sql_query_params : array());
 
 						if ($this->debug) { Debug::msg('FIRST: '.$vs_sql." [$pn_subject_tablenum] ".$t->GetTime(4)); }
@@ -1327,7 +1384,13 @@ class WLPlugSearchEngineSqlSearch extends BaseSearchPlugin implements IWLPlugSea
 						switch($vs_op) {
 							case 'AND':
 								if ($vs_direct_sql_query) {
-									$vs_direct_sql_query = str_replace('^JOIN', "INNER JOIN {$ps_dest_table} AS ftmp1 ON ftmp1.row_id = ca.row_id", $vs_direct_sql_query);
+									if ($vn_direct_sql_target_table_num != $pn_subject_tablenum) {
+										array_push($va_join, "INNER JOIN {$ps_dest_table} AS ftmp1 ON ftmp1.row_id = ".$this->opo_datamodel->primaryKey($pn_subject_tablenum, true));
+									} else {
+										array_unshift($va_join, "INNER JOIN {$ps_dest_table} AS ftmp1 ON ftmp1.row_id = ca.row_id");
+									}
+									$vs_direct_sql_query = str_replace('^JOIN', join("\n", $va_join), $vs_direct_sql_query);
+									$pa_direct_sql_query_params = array(($vn_direct_sql_target_table_num != $pn_subject_tablenum) ? $vn_direct_sql_target_table_num : (int)$pn_subject_tablenum);
 								}
 								$vs_sql = ($vs_direct_sql_query) ? "{$vs_direct_sql_query}" : "
 									SELECT swi.row_id
@@ -1339,18 +1402,20 @@ class WLPlugSearchEngineSqlSearch extends BaseSearchPlugin implements IWLPlugSea
 										swi.table_num = ?
 										{$vs_rel_type_id_sql}
 										".($this->getOption('omitPrivateIndexing') ? " AND swi.access = 0" : '')."
-									GROUP BY
-										swi.row_id
+									GROUP BY swi.row_id
 								";
 								
 								if (($vn_num_terms = (sizeof($va_ft_terms) + sizeof($va_ft_like_terms) + sizeof($va_ft_stem_terms))) > 1) {
 									$vs_sql .= " HAVING count(distinct sw.word_id) = {$vn_num_terms}";
 								}
+							
 								$t = new Timer();
 								$qr_res = $this->opo_db->query($vs_sql, is_array($pa_direct_sql_query_params) ? $pa_direct_sql_query_params : array((int)$pn_subject_tablenum));
 								
 								if ($this->debug) { Debug::msg('AND: '.$vs_sql. ' '.$t->GetTime(4). ' '.$qr_res->numRows()); }
-								if (is_array($va_ids = $qr_res->getAllFieldValues('row_id')) && sizeof($va_ids)) {
+						
+								if (is_array($va_ids = $qr_res->getAllFieldValues(($vs_direct_sql_query && ($vn_direct_sql_target_table_num != $pn_subject_tablenum)) ? $this->opo_datamodel->primaryKey($pn_subject_tablenum) : 'row_id')) && sizeof($va_ids)) {
+									
 									$vs_sql = "DELETE FROM {$ps_dest_table} WHERE row_id NOT IN (?)";
 									$qr_res = $this->opo_db->query($vs_sql, array($va_ids));
 									if ($this->debug) { Debug::msg('AND DELETE: '.$vs_sql. ' '.$t->GetTime(4)); }
@@ -1360,7 +1425,8 @@ class WLPlugSearchEngineSqlSearch extends BaseSearchPlugin implements IWLPlugSea
 								break;
 							case 'NOT':
 								if ($vs_direct_sql_query) {
-									$vs_direct_sql_query = str_replace('^JOIN', "", $vs_direct_sql_query);
+									$vs_direct_sql_query = str_replace('^JOIN', join("\n", $va_join), $vs_direct_sql_query);
+									$pa_direct_sql_query_params = array(($vn_direct_sql_target_table_num != $pn_subject_tablenum) ? $vn_direct_sql_target_table_num : (int)$pn_subject_tablenum);
 								}
 								
 								$vs_sql = "
@@ -1373,7 +1439,7 @@ class WLPlugSearchEngineSqlSearch extends BaseSearchPlugin implements IWLPlugSea
 										".($this->getOption('omitPrivateIndexing') ? " AND swi.access = 0" : '');
 								
 								$qr_res = $this->opo_db->query($vs_sql, is_array($pa_direct_sql_query_params) ? $pa_direct_sql_query_params : array((int)$pn_subject_tablenum));
-								$va_ids = $qr_res->getAllFieldValues("row_id");
+								$va_ids = $qr_res->getAllFieldValues(($vs_direct_sql_query && ($vn_direct_sql_target_table_num != $pn_subject_tablenum)) ? $this->opo_datamodel->primaryKey($pn_subject_tablenum) : 'row_id');
 								
 								if (sizeof($va_ids) > 0) {
 									$vs_sql = "
@@ -1388,7 +1454,8 @@ class WLPlugSearchEngineSqlSearch extends BaseSearchPlugin implements IWLPlugSea
 							default:
 							case 'OR':
 								if ($vs_direct_sql_query) {
-									$vs_direct_sql_query = str_replace('^JOIN', "", $vs_direct_sql_query);
+									$vs_direct_sql_query = str_replace('^JOIN', join("\n", $va_join), $vs_direct_sql_query);
+									$pa_direct_sql_query_params = array(($vn_direct_sql_target_table_num != $pn_subject_tablenum) ? $vn_direct_sql_target_table_num : (int)$pn_subject_tablenum);
 								}
 								$vs_sql = ($vs_direct_sql_query) ? "INSERT IGNORE INTO {$ps_dest_table} {$vs_direct_sql_query}" : "
 									INSERT IGNORE INTO {$ps_dest_table}
@@ -1522,14 +1589,11 @@ class WLPlugSearchEngineSqlSearch extends BaseSearchPlugin implements IWLPlugSea
 	# ------------------------------------------------
 	public function flushContentBuffer() {
 		// add fields to doc
-		$va_row_sql = array();
-		$vn_segment = 0;
-		
 		$vn_max_word_segment_size = (int)$this->getOption('maxWordIndexInsertSegmentSize');
 		
 		// add new indexing
 		if (is_array(WLPlugSearchEngineSqlSearch::$s_doc_content_buffer) && sizeof(WLPlugSearchEngineSqlSearch::$s_doc_content_buffer)) {
-			while(sizeof(WLPlugSearchEngineSqlSearch::$s_doc_content_buffer)) {
+			while(sizeof(WLPlugSearchEngineSqlSearch::$s_doc_content_buffer) > 0) {
 				$this->opo_db->query($this->ops_insert_word_index_sql."\n".join(",", array_splice(WLPlugSearchEngineSqlSearch::$s_doc_content_buffer, 0, $vn_max_word_segment_size)));
 			}
 			if ($this->debug) { Debug::msg("[SqlSearchDebug] Commit row indexing"); }

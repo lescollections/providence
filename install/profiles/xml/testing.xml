@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="http://dublincore.org/documents/dces/">
-  <profileName>[Testing] Automated testing purposes only</profileName>
+  <profileName>[Testing] Profile for test cases</profileName>
   <profileDescription/>
   <locales>
     <locale lang="en" country="US">English</locale>
@@ -1163,7 +1163,7 @@
           <table>ca_objects</table>
           <settings>
             <setting name="minAttributesPerRow">1</setting>
-            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">255</setting>
             <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
@@ -1171,7 +1171,7 @@
           <table>ca_entities</table>
           <settings>
             <setting name="minAttributesPerRow">1</setting>
-            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">255</setting>
             <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
@@ -1179,7 +1179,7 @@
           <table>ca_places</table>
           <settings>
             <setting name="minAttributesPerRow">1</setting>
-            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">255</setting>
             <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
@@ -1188,7 +1188,7 @@
           <type>event</type>
           <settings>
             <setting name="minAttributesPerRow">1</setting>
-            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">255</setting>
             <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
@@ -1196,7 +1196,7 @@
           <table>ca_collections</table>
           <settings>
             <setting name="minAttributesPerRow">1</setting>
-            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">255</setting>
             <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
@@ -1204,7 +1204,7 @@
           <table>ca_storage_locations</table>
           <settings>
             <setting name="minAttributesPerRow">1</setting>
-            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">255</setting>
             <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
@@ -1309,6 +1309,15 @@
         </restriction>
         <restriction code="r2">
           <table>ca_object_representations</table>
+          <settings>
+            <setting name="minAttributesPerRow">0</setting>
+            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
+          </settings>
+        </restriction>
+        <!-- FOR TESTING PURPOSES -->
+        <restriction code="r3">
+          <table>ca_object_lots</table>
           <settings>
             <setting name="minAttributesPerRow">0</setting>
             <setting name="maxAttributesPerRow">1</setting>
@@ -2051,6 +2060,8 @@
       </labels>
       <settings>
         <setting name="fieldWidth">70</setting>
+        <setting name="minValue">-65535</setting>
+        <setting name="maxValue">65535</setting>
       </settings>
       <typeRestrictions>
         <restriction code="r1">
@@ -2072,6 +2083,155 @@
       <settings>
         <setting name="fieldWidth">70</setting>
       </settings>
+      <typeRestrictions>
+        <restriction code="r1">
+          <table>ca_objects</table>
+          <settings>
+            <setting name="minAttributesPerRow">0</setting>
+            <setting name="maxAttributesPerRow">255</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
+          </settings>
+        </restriction>
+      </typeRestrictions>
+    </metadataElement>
+    <metadataElement code="tgn" datatype="InformationService">
+      <labels>
+        <label locale="en_US">
+          <name>TGN</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="service">TGN</setting>
+        <setting name="fieldWidth">90</setting>
+      </settings>
+      <typeRestrictions>
+        <restriction code="r1">
+          <table>ca_objects</table>
+          <settings>
+            <setting name="minAttributesPerRow">0</setting>
+            <setting name="maxAttributesPerRow">255</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
+          </settings>
+        </restriction>
+      </typeRestrictions>
+    </metadataElement>
+    <metadataElement code="aat" datatype="InformationService">
+      <labels>
+        <label locale="en_US">
+          <name>AAT</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="service">AAT</setting>
+        <setting name="fieldWidth">90</setting>
+      </settings>
+      <typeRestrictions>
+        <restriction code="r1">
+          <table>ca_objects</table>
+          <settings>
+            <setting name="minAttributesPerRow">0</setting>
+            <setting name="maxAttributesPerRow">255</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
+          </settings>
+        </restriction>
+      </typeRestrictions>
+    </metadataElement>
+    <metadataElement code="ulan" datatype="InformationService">
+      <labels>
+        <label locale="en_US">
+          <name>ULAN</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="service">ULAN</setting>
+        <setting name="fieldWidth">90</setting>
+      </settings>
+      <typeRestrictions>
+        <restriction code="r1">
+          <table>ca_objects</table>
+          <settings>
+            <setting name="minAttributesPerRow">0</setting>
+            <setting name="maxAttributesPerRow">255</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
+          </settings>
+        </restriction>
+      </typeRestrictions>
+    </metadataElement>
+    <metadataElement code="ubio" datatype="InformationService">
+      <labels>
+        <label locale="en_US">
+          <name>uBio</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="service">uBio</setting>
+        <setting name="fieldWidth">90</setting>
+      </settings>
+      <typeRestrictions>
+        <restriction code="r1">
+          <table>ca_objects</table>
+          <settings>
+            <setting name="minAttributesPerRow">0</setting>
+            <setting name="maxAttributesPerRow">255</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
+          </settings>
+        </restriction>
+      </typeRestrictions>
+    </metadataElement>
+    <metadataElement code="wikipedia" datatype="InformationService">
+      <labels>
+        <label locale="en_US">
+          <name>Wikipedia</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="service">Wikipedia</setting>
+        <setting name="fieldWidth">90</setting>
+      </settings>
+      <typeRestrictions>
+        <restriction code="r1">
+          <table>ca_objects</table>
+          <settings>
+            <setting name="minAttributesPerRow">0</setting>
+            <setting name="maxAttributesPerRow">255</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
+          </settings>
+        </restriction>
+      </typeRestrictions>
+    </metadataElement>
+    <metadataElement code="informationservice" datatype="Container">
+      <labels>
+        <label locale="en_US">
+          <name>InfoService Container</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="doesNotTakeLocale">1</setting>
+      </settings>
+      <elements>
+        <metadataElement code="wiki" datatype="InformationService">
+          <labels>
+            <label locale="en_US">
+              <name>Wikipedia</name>
+            </label>
+          </labels>
+          <settings>
+            <setting name="service">Wikipedia</setting>
+            <setting name="fieldWidth">40</setting>
+          </settings>
+        </metadataElement>
+        <metadataElement code="ulan_container" datatype="InformationService">
+          <labels>
+            <label locale="en_US">
+              <name>ULAN</name>
+            </label>
+          </labels>
+          <settings>
+            <setting name="service">ULAN</setting>
+            <setting name="fieldWidth">40</setting>
+          </settings>
+        </metadataElement>
+      </elements>
       <typeRestrictions>
         <restriction code="r1">
           <table>ca_objects</table>
@@ -2115,6 +2275,24 @@
                 <setting name="label" locale="en_US">Alternate titles</setting>
                 <setting name="add_label" locale="en_US">Add name</setting>
               </settings>
+            </placement>
+            <placement code="ca_attribute_tgn">
+              <bundle>ca_attribute_tgn</bundle>
+            </placement>
+            <placement code="ca_attribute_aat">
+              <bundle>ca_attribute_aat</bundle>
+            </placement>
+            <placement code="ca_attribute_ulan">
+              <bundle>ca_attribute_ulan</bundle>
+            </placement>
+            <placement code="ca_attribute_ubio">
+              <bundle>ca_attribute_ubio</bundle>
+            </placement>
+            <placement code="ca_attribute_wikipedia">
+              <bundle>ca_attribute_wikipedia</bundle>
+            </placement>
+            <placement code="ca_attribute_informationservice">
+              <bundle>ca_attribute_informationservice</bundle>
             </placement>
             <placement code="ca_attribute_date">
               <bundle>ca_attribute_date</bundle>
