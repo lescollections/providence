@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: CollectiveAccess Providence\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-06-23 09:11-0500\n"
-"PO-Revision-Date: 2015-07-06 15:39+0200\n"
+"PO-Revision-Date: 2015-07-06 21:56+0200\n"
 "Last-Translator: Gautier Michelin <gm@ideesculture.com>\n"
 "Language-Team: French (France) (http://www.transifex.com/projects/p/collectiveaccess-providence/language/fr_FR/)\n"
 "MIME-Version: 1.0\n"
@@ -4992,7 +4992,7 @@ msgstr "Cocher cette option si vous voulez une alerte si cette dimension ne doit
 #: app/lib/ca/Attributes/Values/LengthAttributeValue.php:208
 #: app/lib/ca/Attributes/Values/WeightAttributeValue.php:207
 msgid "%1 is not a valid measurement"
-msgstr "%1 ne contient pas une mesure valide"
+msgstr "%1 n'est pas une mesure valide. Avez vous oublié l'unité de mesure ?"
 
 #: app/lib/ca/Attributes/Values/ListAttributeValue.php:50
 msgid "Width of list in user interface"
@@ -22204,11 +22204,11 @@ msgstr "Types"
 
 #: themes/default/views/administrate/access/role_edit_html.php:74
 msgid "Sources"
-msgstr ""
+msgstr "Sources"
 
 #: themes/default/views/administrate/access/role_edit_html.php:78
 msgid "Pawtucket"
-msgstr ""
+msgstr "Pawtucket"
 
 #: themes/default/views/administrate/access/role_edit_html.php:129
 msgid "Element"
@@ -22427,12 +22427,12 @@ msgstr "Vous parcourez : "
 #: themes/default/views/administrate/setup/Browse/browse_controls_html.php:102
 #: themes/default/views/find/Browse/browse_controls_html.php:102
 msgid "start over"
-msgstr ""
+msgstr "recommencer"
 
 #: themes/default/views/administrate/setup/Browse/browse_controls_html.php:110
 #: themes/default/views/find/Browse/browse_controls_html.php:110
 msgid "Browse by"
-msgstr ""
+msgstr "Parcourir par"
 
 #: themes/default/views/administrate/setup/Browse/browse_start_html.php:31
 #: themes/default/views/find/Browse/browse_start_html.php:31
@@ -22527,7 +22527,7 @@ msgstr "Afficher dans la hiérarchie"
 #: themes/default/views/find/Results/ca_tour_stops_results_list_html.php:99
 #: themes/default/views/find/Results/ca_tours_results_list_html.php:99
 msgid "Totals"
-msgstr ""
+msgstr "Totaux"
 
 #: themes/default/views/administrate/setup/Results/ca_list_items_results_list_html.php:117
 msgid "View in Hierarchy"
@@ -22628,12 +22628,12 @@ msgstr "Affichage"
 #: themes/default/views/administrate/setup/Results/search_options_html.php:134
 #: themes/default/views/find/Results/search_options_html.php:134
 msgid "Refine Results"
-msgstr ""
+msgstr "Filtrer les résultats"
 
 #: themes/default/views/administrate/setup/Results/search_options_html.php:135
 #: themes/default/views/find/Results/search_options_html.php:135
 msgid "Export Tools"
-msgstr ""
+msgstr "Outils d'export"
 
 #: themes/default/views/administrate/setup/Search/ajax_refine_facet_html.php:198
 msgid "Jump to"
@@ -22699,7 +22699,7 @@ msgstr "Filtrer les résultats par :"
 #: themes/default/views/administrate/setup/Search/search_refine_html.php:49
 #: themes/default/views/find/Search/search_refine_html.php:49
 msgid "clear all"
-msgstr ""
+msgstr "vider tout"
 
 #: themes/default/views/administrate/setup/Search/search_sets_html.php:33
 #: themes/default/views/find/Search/search_sets_html.php:33
@@ -22736,12 +22736,12 @@ msgstr "Créer l'ensemble"
 #: themes/default/views/administrate/setup/Search/search_sets_html.php:72
 #: themes/default/views/find/Search/search_sets_html.php:72
 msgid "from results"
-msgstr ""
+msgstr "tous les résultats"
 
 #: themes/default/views/administrate/setup/Search/search_sets_html.php:73
 #: themes/default/views/find/Search/search_sets_html.php:73
 msgid "from checked"
-msgstr ""
+msgstr "les résultats cochés"
 
 #: themes/default/views/administrate/setup/Search/search_sets_html.php:80
 #: themes/default/views/find/Search/search_sets_html.php:80
@@ -22783,7 +22783,7 @@ msgstr "Ensemble <i>^set_name</i> créé avec ^num_items ^item_type_name"
 #: themes/default/views/administrate/setup/Search/search_tools_html.php:38
 #: themes/default/views/find/Search/search_tools_html.php:38
 msgid "Export results with mapping"
-msgstr ""
+msgstr "Exporter les résultats avec la correspondance"
 
 #: themes/default/views/administrate/setup/Search/search_tools_html.php:53
 #: themes/default/views/find/Search/search_tools_html.php:53
@@ -25562,7 +25562,7 @@ msgstr "Enregistrer la recherche"
 
 #: themes/default/views/find/Search/search_tools_html.php:90
 msgid "Download media as"
-msgstr ""
+msgstr "Télécharger les médias au format"
 
 #: themes/default/views/find/Search/search_tools_html.php:98
 msgid "Selected results: %1"
