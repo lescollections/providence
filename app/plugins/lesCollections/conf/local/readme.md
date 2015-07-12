@@ -1,0 +1,1 @@
+You can put in this directory a lesCollections.conf file that will overwrite the default conf/lesCollections.conf file.
