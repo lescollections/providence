@@ -18,4 +18,4 @@ app/lib/core/Parsers/dompdf/lib/fonts/*fm.php
 app/log/log*.txt
 themes/default/css/local.css
 themes/default/views/bundles/inspector_info.php
-
+app/plugins/lesCollections/conf/local/lesCollections.conf

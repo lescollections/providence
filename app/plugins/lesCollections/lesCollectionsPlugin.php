@@ -36,8 +36,17 @@
 		public function __construct($ps_plugin_path) {
 			$this->ops_plugin_path = $ps_plugin_path;
 			$this->description = _t('plugin to manage lescollections.fr account');
-			parent::__construct();
-			$this->opo_config = Configuration::load($ps_plugin_path.'/conf/lesCollections.conf');
+
+            parent::__construct();
+
+            if (file_exists("{$ps_plugin_path}/conf/local/lesCollections.conf")) {
+                $vs_conf_path = "{$ps_plugin_path}/conf/local/lesCollections.conf";
+            } elseif(file_exists("{$ps_plugin_path}/conf/local/lesCollections.conf")) {
+                $vs_conf_path = "{$ps_plugin_path}//conf/local/lesCollections.conf";
+            } else {
+                return false;
+            }
+            $this->opo_config = Configuration::load($vs_conf_path);
 		}
 		# -------------------------------------------------------
 		/**

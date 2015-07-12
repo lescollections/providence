@@ -51,8 +51,15 @@
  				return;
  			}
  			*/
- 			$this->opo_config = Configuration::load(__CA_APP_DIR__.'/plugins/lesCollections/conf/lesCollections.conf');
-
+            $ps_plugin_path = __CA_APP_DIR__.'/plugins/lesCollections';
+            if (file_exists("{$ps_plugin_path}/conf/local/lesCollections.conf")) {
+                $vs_conf_path = "{$ps_plugin_path}/conf/local/lesCollections.conf";
+            } elseif(file_exists("{$ps_plugin_path}/conf/local/lesCollections.conf")) {
+                $vs_conf_path = "{$ps_plugin_path}//conf/local/lesCollections.conf";
+            } else {
+                return false;
+            }
+            $this->opo_config = Configuration::load($vs_conf_path);
  		}
 
         # -------------------------------------------------------
@@ -89,11 +96,22 @@
                 $this->view->setVar('saved', true);
             } else {
                 $this->view->setVar('saved', false);
-           }
+            }
 
-            $jsonFile = __CA_BASE_DIR__.$this->opo_config->get(pawtucketLesCollectionsJsonFile);
+            // Detecting if we have a relative path or a full qualified path to json file, when "/" is at the beginning of path
+            $vs_pawtucketLesCollectionsJsonFile = $this->opo_config->get(pawtucketLesCollectionsJsonFile);
+            if (!substr($vs_pawtucketLesCollectionsJsonFile,0,1)=='/') {
+                $jsonFile = __CA_BASE_DIR__.$vs_pawtucketLesCollectionsJsonFile;
+            } else {
+                $jsonFile = $vs_pawtucketLesCollectionsJsonFile;
+            };
+
+            // Checking existing file
             if (!$vs_json_infos = file_get_contents($jsonFile)) {
+                // Checking write rights
                 if (!file_put_contents($jsonFile ,"\n")) {
+
+                    // TODO : handling errors for non writable json file
                     var_dump($jsonFile);
                     die;
                  //   $this->response->setRedirect($this->request->config->get('error_display_url').'/n/3500?r='.urlencode($this->request->getFullUrlPath()));

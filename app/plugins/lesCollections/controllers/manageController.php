@@ -51,8 +51,14 @@
  				return;
  			}
  			*/
- 			$this->opo_config = Configuration::load(__CA_APP_DIR__.'/plugins/lesCollections/conf/lesCollections.conf');
- 		}
+            if (file_exists("{$ps_plugin_path}/conf/local/lesCollections.conf")) {
+                $vs_conf_path = "{$ps_plugin_path}/conf/local/lesCollections.conf";
+            } elseif(file_exists("{$ps_plugin_path}/conf/local/lesCollections.conf")) {
+                $vs_conf_path = "{$ps_plugin_path}//conf/local/lesCollections.conf";
+            } else {
+                return false;
+            }
+            $this->opo_config = Configuration::load($vs_conf_path); 		}
  		 		
  		# -------------------------------------------------------
  		# Functions to render views
