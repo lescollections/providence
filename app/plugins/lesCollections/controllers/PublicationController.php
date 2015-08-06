@@ -52,7 +52,7 @@
  			}
  			*/
             $ps_plugin_path = __CA_APP_DIR__.'/plugins/lesCollections';
-            $vs_conf_path = "{$ps_plugin_path}//conf/local/lesCollections.conf";
+            $vs_conf_path = "{$ps_plugin_path}/conf/lesCollections.conf";
             if (file_exists("{$ps_plugin_path}/conf/local/lesCollections.conf")) {
                 $vs_conf_path = "{$ps_plugin_path}/conf/local/lesCollections.conf";
             }
