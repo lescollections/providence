@@ -57,6 +57,8 @@
                 $vs_conf_path = "{$ps_plugin_path}/conf/local/lesCollections.conf";
             }
             $this->opo_config = Configuration::load($vs_conf_path);
+            var_dump($vs_conf_path);
+            die();
  		}
 
         # -------------------------------------------------------
