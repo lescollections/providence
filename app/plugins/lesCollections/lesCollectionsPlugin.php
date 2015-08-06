@@ -1,6 +1,6 @@
 <?php
 /* ----------------------------------------------------------------------
- * mediaImportPlugin.php : 
+ * mediaImportPlugin.php :
  * ----------------------------------------------------------------------
  * CollectiveAccess
  * Open-source collections management software
@@ -15,17 +15,17 @@
  * the terms of the provided license as published by Whirl-i-Gig
  *
  * CollectiveAccess is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTIES whatsoever, including any implied warranty of 
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+ * WITHOUT ANY WARRANTIES whatsoever, including any implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * This source code is free and modifiable under the terms of 
+ * This source code is free and modifiable under the terms of
  * GNU General Public License. (http://www.gnu.org/copyleft/gpl.html). See
  * the "license.txt" file for details, or visit the CollectiveAccess web site at
  * http://www.CollectiveAccess.org
  *
  * ----------------------------------------------------------------------
  */
- 
+
 	class lesCollectionsPlugin extends BaseApplicationPlugin {
 		# -------------------------------------------------------
 		protected $description = 'lesCollections.fr for CollectiveAccess';
@@ -41,8 +41,8 @@
 
             if (file_exists("{$ps_plugin_path}/conf/local/lesCollections.conf")) {
                 $vs_conf_path = "{$ps_plugin_path}/conf/local/lesCollections.conf";
-            } elseif(file_exists("{$ps_plugin_path}/conf/local/lesCollections.conf")) {
-                $vs_conf_path = "{$ps_plugin_path}//conf/local/lesCollections.conf";
+            } elseif(file_exists("{$ps_plugin_path}/conf/lesCollections.conf")) {
+                $vs_conf_path = "{$ps_plugin_path}//conf/lesCollections.conf";
             } else {
                 return false;
             }
@@ -67,7 +67,7 @@
 		public function hookRenderMenuBar($pa_menu_bar) {
 			if ($o_req = $this->getRequest()) {
 				if (!$o_req->user->canDoAction('can_use_lescollectionsfr_plugin')) { return $pa_menu_bar; }
-				
+
 				$pa_menu_bar["manage"]["navigation"]["lescollections"] = array(
 					'displayName' => "lesCollections.fr",
 					"default" => array(
@@ -115,6 +115,6 @@
 					)
 			);
 		}
-		
+
 	}
 ?>
