@@ -80,8 +80,8 @@
                             "compte" => array(
                                 'displayName' => "mon compte",
                                 "default" => array(
-                                    'module' => 'lescollections',
-                                    'controller' => 'manage',
+                                    'module' => 'lesCollections',
+                                    'controller' => 'Manage',
                                     'action' => 'Index'
                                 ),
                                 "is_enabled" => 1
@@ -89,8 +89,8 @@
                             "publication" => array(
                                 'displayName' => "publication",
                                 "default" => array(
-                                    'module' => 'lescollections',
-                                    'controller' => 'publication',
+                                    'module' => 'lesCollections',
+                                    'controller' => 'Publication',
                                     'action' => 'Index'
                                 ),
                                 "is_enabled" => 1
