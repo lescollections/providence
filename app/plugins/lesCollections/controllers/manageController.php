@@ -32,9 +32,9 @@
  	require_once(__CA_MODELS_DIR__.'/ca_objects.php');
  	require_once(__CA_MODELS_DIR__.'/ca_object_representations.php');
  	require_once(__CA_MODELS_DIR__.'/ca_locales.php');
- 	
 
- 	class manageController extends ActionController {
+
+ 	class ManageController extends ActionController {
  		# -------------------------------------------------------
  		protected $opa_locales;
  		protected $pa_parameters;
@@ -59,7 +59,7 @@
                 return false;
             }
             $this->opo_config = Configuration::load($vs_conf_path); 		}
- 		 		
+
  		# -------------------------------------------------------
  		# Functions to render views
  		# -------------------------------------------------------
@@ -68,7 +68,7 @@
 			$this->render('manage_index_html.php');
  		}
 
- 		# ------------------------------------------------------- 				
+ 		# -------------------------------------------------------
  		public function Paiement($type="") {
 			$this->view->setVar('sample_var', "sample_var");
 			$this->render('manage_paiement_html.php');

@@ -32,9 +32,9 @@
  	require_once(__CA_MODELS_DIR__.'/ca_objects.php');
  	require_once(__CA_MODELS_DIR__.'/ca_object_representations.php');
  	require_once(__CA_MODELS_DIR__.'/ca_locales.php');
- 	
 
- 	class publicationController extends ActionController {
+
+ 	class PublicationController extends ActionController {
  		# -------------------------------------------------------
  		protected $opa_locales;
  		protected $pa_parameters;
@@ -45,7 +45,7 @@
 
  		public function __construct(&$po_request, &$po_response, $pa_view_paths=null) {
  			parent::__construct($po_request, $po_response, $pa_view_paths);
- 			
+
  			/*if (!$this->request->user->canDoAction('can_use_lescollectionsfr_plugin')) {
  				$this->response->setRedirect($this->request->config->get('error_display_url').'/n/3500?r='.urlencode($this->request->getFullUrlPath()));
  				return;
