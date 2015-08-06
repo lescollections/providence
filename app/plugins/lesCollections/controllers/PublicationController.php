@@ -76,8 +76,6 @@
                     "copyright" => $params["copyright"],
                     "menublog" => $params["menublog"],
                     "menucollections" => $params["menucollections"],
-                    "menugalerie" => $params["menugalerie"]
-                    "menucollections" => $params["menucollections"],
                     "menugalerie" => $params["menugalerie"],
                     "menublog" => $params["menublog"]
                 )
