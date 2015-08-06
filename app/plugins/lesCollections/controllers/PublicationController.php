@@ -76,8 +76,7 @@
                     "copyright" => $params["copyright"],
                     "menublog" => $params["menublog"],
                     "menucollections" => $params["menucollections"],
-                    "menugalerie" => $params["menugalerie"],
-                    "menublog" => $params["menublog"]
+                    "menugalerie" => $params["menugalerie"]
                 )
             );
              $jsonFile = __CA_BASE_DIR__.$this->opo_config->get(pawtucketLesCollectionsJsonFile);
