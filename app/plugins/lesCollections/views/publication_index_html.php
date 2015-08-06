@@ -64,6 +64,29 @@ $va_infos = $this->getVar("infos");
                 <td>Informations de contact (adresse postale, téléphone, etc.)</td>
                 <td><textarea name="contactinformations" style="width:90%;height:110px;" placeholder="<b>Nos coordonnées</b><br/>Notre adresse..."/><?php print ($va_infos->contactinformations ? : ""); ?></textarea></td>
             </tr>
+            <tr>
+                <td>Texte du lien de menu pour afficher tous les objets de la base</td>
+                <td><input type="text" name="menucollections" style="width:90%;" placeholder="Collections"
+                           value="<?php print ($va_infos->menucollections ? : ""); ?>"/></td>
+            </tr>
+            <tr>
+                <td>Texte du lien de menu pour accéder à la galerie d'ensembles</td>
+                <td><input type="text" name="menugalerie" style="width:90%;" placeholder="Galerie"
+                           value="<?php print ($va_infos->menugalerie ? : ""); ?>"/></td>
+            </tr>
+            <tr>
+                <td>Texte du lien de menu pour accéder aux actualités</td>
+                <td><input type="text" name="menublog" style="width:90%;" placeholder="Blog"
+                           value="<?php print ($va_infos->menublog ? : ""); ?>"/></td>
+            </tr>
+           <!-- <tr>
+                <td>Autres liens à ajouter au menu</td>
+                <td><input type="text" name="menuautrelien1" style="width:90%;" placeholder="Autre lien: texte"
+                           value="<?php print ($va_infos->menuautrelien1 ? : ""); ?>"/></td>
+                <td><input type="text" name="menuautrelien1" style="width:90%;" placeholder="Autre lien: url du lien"
+                           value="<?php print ($va_infos->menuautrelien1 ? : ""); ?>"/></td>
+
+            </tr>-->
             </tbody>
         </table>
 

@@ -77,6 +77,9 @@
                     "menublog" => $params["menublog"],
                     "menucollections" => $params["menucollections"],
                     "menugalerie" => $params["menugalerie"]
+                    "menucollections" => $params["menucollections"],
+                    "menugalerie" => $params["menugalerie"],
+                    "menublog" => $params["menublog"]
                 )
             );
              $jsonFile = __CA_BASE_DIR__.$this->opo_config->get(pawtucketLesCollectionsJsonFile);
@@ -101,6 +104,9 @@
                     "menublog"=>$this->request->getParameter("menublog",pString),
                     "menucollections"=>$this->request->getParameter("menucollections",pString),
                     "menugalerie"=>$this->request->getParameter("menugalerie",pString)
+                    "menucollections" => $this->request->getParameter("menucollections",pString),
+                    "menugalerie" => $this->request->getParameter("menugalerie",pString),
+                    "menublog" => $this->request->getParameter("menublog",pString),
                 );
                 if (!$this->_updateJson($va_params)) {
                     $this->response->setRedirect($this->request->config->get('error_display_url').'/n/3500?r='.urlencode($this->request->getFullUrlPath()));
