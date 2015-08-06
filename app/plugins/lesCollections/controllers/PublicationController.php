@@ -57,6 +57,7 @@
             } elseif(file_exists("{$ps_plugin_path}/conf/local/lesCollections.conf")) {
                 $vs_conf_path = "{$ps_plugin_path}//conf/local/lesCollections.conf";
             } else {
+                die($vs_conf_path);
                 return false;
             }
             $this->opo_config = Configuration::load($vs_conf_path);
