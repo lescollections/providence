@@ -70,10 +70,16 @@
                 array(
                     "collectionname" => $params["collectionname"],
                     "collectionsubname" => $params["collectionsubname"],
-                    "collectionintro" => $params["collectionintro"]
+                    "collectionintro" => $params["collectionintro"],
+                    "loginrequis" => $params["loginrequis"],
+                    "contactinformations" => $params["contactinformations"],
+                    "copyright" => $params["copyright"],
+                    "menublog" => $params["menublog"],
+                    "menucollections" => $params["menucollections"],
+                    "menugalerie" => $params["menugalerie"]
                 )
             );
-            $jsonFile = __CA_BASE_DIR__.$this->opo_config->get(pawtucketLesCollectionsJsonFile);
+             $jsonFile = __CA_BASE_DIR__.$this->opo_config->get(pawtucketLesCollectionsJsonFile);
             if (!file_put_contents( $jsonFile, $vs_json_infos)) {
                 return false;
             }
@@ -88,7 +94,13 @@
                 $va_params = array(
                     "collectionname" => $this->request->getParameter("collectionname",pString),
                     "collectionsubname" => $this->request->getParameter("collectionsubname",pString),
-                    "collectionintro" => $this->request->getParameter("collectionintro",pString)
+                    "collectionintro" => $this->request->getParameter("collectionintro",pString),
+                    "loginrequis"=> $this->request->getParameter("loginrequis",pInteger),
+                    "contactinformations"=> $this->request->getParameter("contactinformations",pString),
+                    "copyright"=>$this->request->getParameter("copyright",pString),
+                    "menublog"=>$this->request->getParameter("menublog",pString),
+                    "menucollections"=>$this->request->getParameter("menucollections",pString),
+                    "menugalerie"=>$this->request->getParameter("menugalerie",pString)
                 );
                 if (!$this->_updateJson($va_params)) {
                     $this->response->setRedirect($this->request->config->get('error_display_url').'/n/3500?r='.urlencode($this->request->getFullUrlPath()));
