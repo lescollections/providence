@@ -39,6 +39,17 @@ trait SyncableBaseModel {
 	 */
 	public function setGUID($pa_options=null) {
 		if(!$this->getPrimaryKey()) { return; }
+
+		// [sobriété 16/08, disable_guid_generation, app.conf, défaut 0 = comportement amont] Ne génère/ne
+		// stocke pas de ligne ca_guids pour cette fiche/relation/libellé/attribut. Cesse de fonctionner tant
+		// que l'option est active : réplication/synchronisation entre instances (ReplicationService,
+		// Sync/Replicator, caUtils replicate-data / align-guids-for-consortium-source / get-guid /
+		// generate-missing-guids), le bundle d'affichage ^table._guid, l'historique de valeur d'un bundle
+		// (getLogForBundleValueHistory), et la part GUID de la somme de contrôle de dédoublonnage des
+		// relations et libellés (checksum toujours calculée, mais ne distingue plus deux lignes autrement
+		// identiques). Catalogage courant, recherche, browse, import, GraphQL : non concernés.
+		if(($o_config = $this->getAppConfig()) && (bool)$o_config->get('disable_guid_generation')) { return; }
+
 		$vs_guid = caGetOption('setGUIDTo', $pa_options, caGenerateGUID());
 
 		/** @var ca_guids $t_guid */

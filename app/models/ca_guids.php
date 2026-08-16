@@ -223,6 +223,13 @@ class ca_guids extends BaseModel {
 	 * @return bool|string
 	 */
 	private static function addForRow($pn_table_num, $pn_row_id, $pa_options=null) {
+		// [sobriété 16/08, disable_guid_generation, app.conf, défaut 0 = comportement amont] Couvre la
+		// génération paresseuse (ca_guids::getForRow() sans option dontAdd) : sans cette garde, tout lecteur
+		// de GUID (cf. setGUID() dans SyncableBaseModel.php) regarnirait la table même avec la garde à
+		// l'insertion. Mêmes lecteurs cassés que setGUID() : réplication, ^table._guid, historique de valeur,
+		// dédoublonnage par GUID.
+		if(($o_config = Configuration::load()) && (bool)$o_config->get('disable_guid_generation')) { return false; }
+
 		/** @var Transaction $o_tx */
 		if($o_tx = caGetOption('transaction', $pa_options, null)) {
 			$o_db = $o_tx->getDb();
