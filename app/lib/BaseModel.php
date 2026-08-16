@@ -7043,7 +7043,6 @@ if ((!isset($pa_options['dontSetHierarchicalIndexing']) || !$pa_options['dontSet
 		}
 
 		if (!(($change_type == 'U') && (!sizeof($snapshot))) || caGetOption('touch', $options, false)) {
-			$snapshot = caSerializeForDatabase($snapshot, true);
 			// Create primary log entry
 			$this->opqs_change_log->execute(
 				$log_id, caGetOption('datetime', $options, time()), $user_id, $unit_id, $change_type,
@@ -7051,7 +7050,18 @@ if ((!isset($pa_options['dontSetHierarchicalIndexing']) || !$pa_options['dontSet
 			);
 			
 			$log_id = ($log_id > 0) ? $log_id : $this->opqs_change_log->getLastInsertID();
-			$this->opqs_change_log_snapshot->execute($log_id, $snapshot);
+
+			// [sobriété 16/08, disable_change_log_snapshots, app.conf, défaut 0 = comportement amont]
+			// N'écrit pas l'instantané (ca_change_log_snapshots) : ca_change_log et ca_change_log_subjects
+			// sont toujours écrits, donc « créé le »/« modifié le » (inspecteur, created:/modified: en
+			// recherche, facettes de browse, OAI-PMH, alertes) continuent de fonctionner. Cesse de
+			// fonctionner : l'écran « Journal » de la fiche et le journal global (tous deux INNER JOIN
+			// l'instantané), l'historique de valeur d'un bundle, et la réplication fondée sur le journal.
+			// Aucune fonction d'annulation ne dépend de l'instantané (aucune n'existe dans le socle).
+			if(!$this->_CONFIG->get('disable_change_log_snapshots')) {
+				$snapshot = caSerializeForDatabase($snapshot, true);
+				$this->opqs_change_log_snapshot->execute($log_id, $snapshot);
+			}
 		
 			if ($g_change_log_delegate && method_exists($g_change_log_delegate, 'onLogChange')) {
 				call_user_func( array( $g_change_log_delegate, 'onLogChange'), $this->tableNum(), $row_id, $log_id );
