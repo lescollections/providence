@@ -1718,11 +1718,22 @@ class WLPlugSearchEngineSqlSearch2 extends BaseSearchPlugin implements IWLPlugSe
 	 * @return array Tokenized terms
 	 */
 	static public function tokenize(?string $content, ?bool $for_search=false, ?int $index=0) : array {
+		if(($content === null) || ($content === '')) { return []; }
 		if(!self::$whitespace_tokenizer_regex) {
 			self::$whitespace_tokenizer_regex = caGetSearchConfig()->get('whitespace_tokenizer_regex');
 		}
 		$content = html_entity_decode($content, ENT_QUOTES, 'UTF-8');
-		$content = preg_replace('![\']+!u', '', $content);		// strip apostrophes for compatibility with SearchEngine class, which does the same to all search expressions
+		$cleaned = preg_replace('![\']+!u', '', $content);		// strip apostrophes for compatibility with SearchEngine class, which does the same to all search expressions
+		if ($cleaned === null) {
+			// When $content is not valid UTF-8, preg_replace() with the /u modifier returns null,
+			// which caIdentifyAlphabet() (non-nullable parameter) turns into a fatal TypeError —
+			// killing a reindex mid-run, or the online indexing of any save carrying such a value.
+			// Repair the encoding and retry; if that still fails there is nothing to tokenize.
+			$content = preg_replace('![\']+!u', '', mb_convert_encoding($content, 'UTF-8', 'UTF-8'));
+			if ($content === null) { return []; }
+		} else {
+			$content = $cleaned;
+		}
 
 		switch($alphabet = caIdentifyAlphabet($content)) {
 			case 'HAN':
